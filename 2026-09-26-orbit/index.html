@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="vi" class="fx-load fx-img card-style-caption">
+<html lang="vi" class="fx-load card-style-caption link-underline fx-grain">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"load_sequence": true, "split_headings": "hero", "image_reveal": true, "parallax": 0.1, "stagger": true, "magnetic": true, "scroll_progress": false, "wordmark": true}</script>
+<script type="application/json" id="fx-config">{"page": {"view_transition": "wipe", "cursor": true, "grain": true, "progress": false}, "hover": {"cards": "spotlight", "buttons": "magnetic", "links": "underline"}, "parallax_strength": 0.08}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ORBIT — Trang sức điêu khắc đương đại</title>
@@ -14,6 +14,7 @@
 <meta property="og:description" content="Khám phá trang sức bạc điêu khắc đương đại ORBIT, những thiết kế giới hạn dành cho phụ nữ thành thị yêu vẻ đẹp độc bản và trải nghiệm tư vấn riêng tư tại atelier.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-orbit/assets/img/og.jpg">
 <meta name="theme-color" content="#07090C">
+<meta name="build-id" content="20260927022147">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +49,7 @@
   </div>
 </header>
 <main id="main">
-<section class="section hero hero--bleed t-hero_split" id="hero">
+<section class="section hero hero--bleed t-hero_split" id="hero" data-fx-hero="" data-fx-heading="words" data-fx-image="curtain" data-fx-scroll="parallax">
   <div class="hero__content reveal">
     <h1>Trang sức điêu khắc đương đại tôn vinh bản sắc cá nhân</h1>
 <p class="lead">ORBIT tạo nên những vật thể trang sức như các tác phẩm điêu khắc thu nhỏ: tối giản về hình thức, giàu chiều sâu về bề mặt và được hoàn thiện để đồng hành cùng nhịp sống của người phụ nữ thành thị.</p>
@@ -60,7 +61,7 @@
   </div>
   <div class="hero__media"><div class="media "><img src="assets/img/orbit-raster-nhat-quang-main.jpg" alt="Nhẫn bạc điêu khắc Nhật Quang, góc ba phần tư, hình khối uốn lượn phản sáng lạnh; đây là ảnh nhận diện chính của tác phẩ" fetchpriority="high"></div></div>
 </section>
-<section class="section t-card_grid" id="collection-grid">
+<section class="section t-card_grid" id="collection-grid" data-fx-heading="chars" data-fx-image="iris" data-fx-list="rise">
   <div class="container collection">
     <div class="collection__intro reveal stack">
       <h2>Bộ sưu tập bạc giới hạn</h2>
@@ -91,7 +92,7 @@
     </div>
   </div>
 </section>
-<section class="section band section--flush t-split_steps" id="craft">
+<section class="section band section--flush t-split_steps" id="craft" data-fx-heading="words" data-fx-image="diagonal" data-fx-list="slide" data-fx-scroll="tilt">
   <div class="split">
     <div class="split__media"><div class="media "><img src="assets/img/orbit-raster-artisan-craft.jpg" alt="Cận cảnh bàn tay nghệ nhân đang xử lý, giũa và hoàn thiện bề mặt một chiếc nhẫn bạc trên bàn chế tác." loading="lazy" decoding="async"></div></div>
     <div class="split__body">
@@ -104,7 +105,7 @@
     </div>
   </div>
 </section>
-<section class="section t-quote_principles" id="philosophy">
+<section class="section t-quote_principles" id="philosophy" data-fx-heading="blur" data-fx-image="focus" data-fx-scroll="text-fill">
   <div class="container philosophy">
     <div class="philosophy__quote reveal stack">
       <h2>Không trang trí để nổi bật. Tạo hình để được ghi nhớ.</h2>
@@ -141,7 +142,7 @@
     <div class="reveal"><div class="media ratio-3-4"><img src="assets/img/orbit-raster-model-portrait.jpg" alt="Chân dung crop nghệ thuật của phụ nữ thành thị đeo trang sức bạc ORBIT, chỉ thấy một phần gương mặt, cổ và bàn tay." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
-<section class="section band t-cta_banner" id="private-appointment">
+<section class="section band t-cta_banner" id="private-appointment" data-fx-heading="wipe" data-fx-image="wipe-left" data-fx-list="scale">
   <div class="container">
     <div class="appointment reveal">
       <div class="media ratio-4-3"><img src="assets/img/orbit-raster-atelier-main.jpg" alt="Không gian ORBIT Atelier cao cấp với bàn đá/kim loại tối, khay trưng bày nhẫn bạc, ghế đơn và hệ tủ tối giản." loading="lazy" decoding="async"></div>
