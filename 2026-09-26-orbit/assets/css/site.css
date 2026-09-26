@@ -496,3 +496,18 @@ p { margin: 0; }
   .booking { grid-template-columns: 20fr 80fr; }
   .booking__steps { grid-template-columns: 1.25fr .8fr 1.15fr 1fr; gap: 18px; }
 }
+/* kit v1.2 a11y mechanics backported to the ORBIT pilot */
+.eyebrow, .panel__title, .cal__dow { font-size: 12px; }
+.summary .btn { font-size: 12px; }
+a, button, input, select, textarea, label { touch-action: manipulation; }
+section[id] { scroll-margin-top: 96px; }
+.chip, .cal__grid, .size-table td { font-variant-numeric: tabular-nums; }
+.field select { background-color: var(--surface); color: var(--text); }
+.menu-toggle { width: 44px; height: 44px; justify-content: center; align-items: center; }
+.cal__head button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+@media (max-width: 900px) {
+  .cal__day { aspect-ratio: auto; min-height: 44px; border-radius: 10px; }
+  .bk-col[data-step="date"] { padding: 16px 12px; } .cal__grid { gap: 1px; }
+  .confirm__row a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 6px; white-space: nowrap; justify-self: end; }
+  .field input, .field select, .field textarea { font-size: 16px; }
+}
