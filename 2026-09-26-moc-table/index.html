@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="vi" class="fx-load fx-img card-style-caption">
+<html lang="vi" class="fx-load card-style-caption btn-fill link-underline fx-grain">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"load_sequence": true, "split_headings": "hero", "image_reveal": true, "parallax": 0.08, "stagger": true, "magnetic": false, "scroll_progress": false, "wordmark": false}</script>
+<script type="application/json" id="fx-config">{"page": {"view_transition": "fade", "cursor": false, "grain": true, "progress": false}, "hover": {"cards": "tilt", "buttons": "fill", "links": "underline"}, "parallax_strength": 0.12}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MỘC TABLE — Ẩm thực đương đại</title>
@@ -14,6 +14,7 @@
 <meta property="og:description" content="MỘC TABLE là website mẫu fine dining đương đại với thực đơn theo mùa, nông sản bản địa và không gian thưởng vị tối giản.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-moc-table/assets/img/og.jpg">
 <meta name="theme-color" content="#E9E3D6">
+<meta name="build-id" content="20260927022148">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +49,7 @@
   </div>
 </header>
 <main id="main">
-<section class="section hero hero--bleed t-hero_split" id="hero">
+<section class="section hero hero--center t-hero_split" id="hero" data-fx-hero="" data-fx-heading="chars" data-fx-image="panels" data-fx-scroll="parallax">
   <div class="hero__content reveal">
     <h1>Mỹ vị nguyên bản chạm đến tầng sâu giác quan</h1>
 <p class="lead">Một hành trình fine dining tôn trọng mùa vụ, nguyên liệu Việt và kỹ thuật bếp hiện đại. Mỗi món được tiết chế để hương vị nguyên bản trở thành trung tâm của trải nghiệm.</p>
@@ -60,7 +61,7 @@
   </div>
   <div class="hero__media"><div class="media "><img src="assets/img/img-home-hero.jpg" alt="Món fine dining theo mùa của MỘC TABLE trong không gian bếp mở." fetchpriority="high"></div></div>
 </section>
-<section class="section t-card_grid" id="khong-gian">
+<section class="section t-card_grid" id="khong-gian" data-fx-heading="words" data-fx-image="curtain" data-fx-list="rise" data-fx-scroll="zoom">
   <div class="container collection">
     <div class="collection__intro reveal stack">
       <p class="eyebrow">Các không gian dùng bữa</p>
@@ -92,7 +93,7 @@
     </div>
   </div>
 </section>
-<section class="section band section--flush t-split_steps" id="hanh-trinh">
+<section class="section band section--flush t-split_steps" id="hanh-trinh" data-fx-heading="wipe" data-fx-image="blinds" data-fx-list="slide" data-fx-scroll="text-fill">
   <div class="split">
     <div class="split__media"><div class="media "><img src="assets/img/img-home-produce.jpg" alt="Đội bếp MỘC TABLE tuyển chọn nguyên liệu theo mùa." loading="lazy" decoding="async"></div></div>
     <div class="split__body">
@@ -106,7 +107,7 @@
     </div>
   </div>
 </section>
-<section class="section t-quote_principles" id="nguyen-tac">
+<section class="section t-quote_principles" id="nguyen-tac" data-fx-heading="blur" data-fx-image="focus">
   <div class="container philosophy">
     <div class="philosophy__quote reveal stack">
       <p class="eyebrow">Từ căn bếp</p>
@@ -146,7 +147,7 @@
     <div class="reveal"><div class="media ratio-3-4"><img src="assets/img/img-chef-lifestyle.jpg" alt="Bếp trưởng trong không gian bếp mở của MỘC TABLE." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
-<section class="section band t-cta_banner" id="dat-ban-ngay">
+<section class="section band t-cta_banner" id="dat-ban-ngay" data-fx-image="wipe-left" data-fx-list="scale" data-fx-scroll="parallax">
   <div class="container">
     <div class="appointment reveal">
       <div class="media ratio-4-3"><img src="assets/img/img-home-cta.jpg" alt="Bàn ăn được chuẩn bị cho trải nghiệm tại MỘC TABLE." loading="lazy" decoding="async"></div>
