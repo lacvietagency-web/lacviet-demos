@@ -1,4 +1,4 @@
-/* ORBIT demo — interaction mechanism only (menu, reveal, lightbox, booking demo). Nothing is sent anywhere. */
+/* Lạc Việt demo kit v1 — interaction mechanism only (menu, reveal, lightbox, booking demo). Nothing is sent anywhere. */
 (function () {
   "use strict";
 
@@ -63,7 +63,7 @@
   // Booking demo
   var grid = document.querySelector("[data-cal-grid]");
   if (!grid) return;
-  var state = { date: null, time: null, location: null, work: null };
+  var state = { date: null, time: null, option: null, focus: null };
   var sums = function (key, value) {
     document.querySelectorAll('[data-sum="' + key + '"]').forEach(function (el) { el.textContent = value; });
   };
@@ -78,8 +78,9 @@
     var names = ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
     return names[d.getDay()] + ", " + String(d.getDate()).padStart(2, "0") + "/" + String(d.getMonth() + 1).padStart(2, "0") + "/" + d.getFullYear();
   };
-  // Atelier opens Tuesday–Sunday (spec); every day in that window is shown as available.
-  var available = function (d) { return d >= today && d.getDay() !== 1; };
+  // Closed weekdays come from the spec (0 = Sunday … 6 = Saturday).
+  var closed = (grid.dataset.closed || "").split(",").filter(Boolean).map(Number);
+  var available = function (d) { return d >= today && closed.indexOf(d.getDay()) === -1; };
   var render = function () {
     label.textContent = "Tháng " + (view.getMonth() + 1) + ", " + view.getFullYear();
     grid.innerHTML = dows.map(function (d) { return '<span class="cal__dow">' + d + "</span>"; }).join("");
@@ -116,21 +117,21 @@
       sums("time", state.time); activate("location");
     });
   });
-  var setLocation = function () {
-    var checked = document.querySelector('input[name="location"]:checked');
-    if (checked) { state.location = checked.value; sums("location", checked.value); }
+  var setOption = function () {
+    var checked = document.querySelector('input[name="option"]:checked');
+    if (checked) { state.option = checked.value; sums("option", checked.value); }
   };
-  document.querySelectorAll('input[name="location"]').forEach(function (r) { r.addEventListener("change", setLocation); });
-  setLocation();
+  document.querySelectorAll('input[name="option"]').forEach(function (r) { r.addEventListener("change", setOption); });
+  setOption();
 
-  var work = document.getElementById("f-work");
+  var focus = document.querySelector("[data-focus-field]");
   var params = new URLSearchParams(location.search);
-  if (work) {
-    if (params.get("tac-pham")) {
-      Array.prototype.forEach.call(work.options, function (o) { if (o.text === params.get("tac-pham")) work.value = o.value; });
+  if (focus) {
+    if (params.get("focus")) {
+      Array.prototype.forEach.call(focus.options, function (o) { if (o.text === params.get("focus")) focus.value = o.value; });
     }
-    var setWork = function () { state.work = work.value; sums("work", work.value); };
-    work.addEventListener("change", setWork); setWork();
+    var setFocus = function () { state.focus = focus.value; sums("focus", focus.value); };
+    focus.addEventListener("change", setFocus); setFocus();
   }
 
   var form = document.querySelector("[data-booking-form]");

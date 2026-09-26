@@ -1,11 +1,15 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" class="fx-load fx-img card-style-caption">
 <head>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
+<script type="application/json" id="fx-config">{"load_sequence": true, "split_headings": "hero", "image_reveal": true, "parallax": 0.1, "stagger": true, "magnetic": true, "scroll_progress": false, "wordmark": true}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Đặt lịch hẹn thử trực tiếp | ORBIT Atelier</title>
 <meta name="description" content="Đặt lịch trải nghiệm trang sức ORBIT tại atelier với khung giờ riêng, lựa chọn ngày, thời gian và địa điểm phù hợp cùng biểu mẫu xác nhận nhanh.">
+<link rel="canonical" href="https://demo.lacviet.media/2026-09-26-orbit/dat-lich.html">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://demo.lacviet.media/2026-09-26-orbit/dat-lich.html">
 <meta property="og:title" content="Đặt lịch hẹn thử trực tiếp | ORBIT Atelier">
 <meta property="og:description" content="Đặt lịch trải nghiệm trang sức ORBIT tại atelier với khung giờ riêng, lựa chọn ngày, thời gian và địa điểm phù hợp cùng biểu mẫu xác nhận nhanh.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-orbit/assets/img/og.jpg">
@@ -13,15 +17,16 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Bỏ qua đến nội dung</a>
 
 <div class="demo-ribbon">Website demo — thương hiệu mẫu do <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a> thiết kế</div>
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html" aria-label="ORBIT — Trang chủ">ORBIT.</a>
+    <a class="logo" href="index.html" aria-label="ORBIT. — Trang chủ" translate="no">ORBIT.</a>
     <nav class="nav" aria-label="Điều hướng chính"><a href="index.html">Trang chủ</a><a href="tac-pham.html">Tác phẩm</a><a href="dat-lich.html" aria-current="page">Đặt lịch</a></nav>
     <a class="btn header-cta" href="dat-lich.html">Đặt lịch hẹn thử trực tiếp</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Mở menu"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -42,30 +47,16 @@
 </svg></span></button>
   </div>
 </header>
-<main>
-<section class="section" id="booking-intro" style="border-top:0">
+<main id="main">
+<section class="section t-booking_intro" id="booking-intro" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
-      <p class="eyebrow">ORBIT ATELIER</p>
+      <p class="eyebrow">ORBIT Atelier</p>
 <h1>Đặt lịch hẹn thử trực tiếp</h1>
 <p class="lead">Mỗi lịch hẹn tại ORBIT được dành riêng cho một khách hoặc một nhóm nhỏ. Bạn có thể thử các tác phẩm, kiểm tra kích thước và trao đổi trực tiếp về lựa chọn phù hợp với phong cách cá nhân.</p>
-      <div class="btn-row"><a class="btn" href="#booking-selector" >Chọn ngày và giờ<span class="icon"><svg aria-hidden="true" focusable="false"
-  class="lucide lucide-arrow-right"
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></span></a></div>
+      <div class="btn-row"><a class="btn" href="#booking-selector">Xem lịch atelier còn trống</a></div>
     </div>
-    <div class="media "><img src="assets/img/atelier-display.jpg" alt="Bàn trưng bày trang sức trong ORBIT Atelier" fetchpriority="high"></div>
+    <div class="media "><img src="assets/img/orbit-raster-atelier-display.jpg" alt="Bàn trưng bày trang sức ORBIT" fetchpriority="high"></div>
     <div class="benefits reveal"><div class="benefit"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-user-round"
   xmlns="http://www.w3.org/2000/svg"
@@ -111,9 +102,9 @@
 </svg></span><div><strong>Không áp lực mua hàng</strong><p>Buổi hẹn tập trung vào trải nghiệm thiết kế, chất liệu và độ phù hợp.</p></div></div></div>
   </div>
 </section>
-<section class="section" id="booking-selector">
+<section class="section t-booking_selector" id="booking-selector">
   <div class="container booking">
-    <div class="reveal stack"><p class="eyebrow">BƯỚC 01</p>
+    <div class="reveal stack"><p class="eyebrow">Bước 1</p>
 <h2>Chọn thời gian phù hợp</h2>
 <p class="lead">Các khung giờ hiển thị dưới đây là lịch hẹn còn khả dụng. Thời lượng dự kiến cho mỗi buổi tư vấn là 45 phút.</p></div>
     <div class="booking__steps reveal">
@@ -173,7 +164,7 @@
   <path d="m9 18 6-6-6-6" />
 </svg></span></button>
           </div>
-          <div class="cal__grid" data-cal-grid></div>
+          <div class="cal__grid" data-cal-grid data-closed="1"></div>
         </div>
         <p class="small muted" style="margin-top:12px">Lịch tháng với các ngày còn trống được đánh dấu bằng chấm xanh băng.</p>
       </div>
@@ -212,13 +203,13 @@
   <circle cx="12" cy="10" r="3" />
 </svg></span> Địa điểm</p>
           <label class="location">
-            <input type="radio" name="location" value="ORBIT Atelier — Trung tâm" checked>
-            <div class="media ratio-1-1"><img src="assets/img/atelier-main.jpg" alt="ORBIT Atelier — Trung tâm" loading="lazy" decoding="async"></div>
+            <input type="radio" name="option" value="ORBIT Atelier — Trung tâm" checked>
+            <div class="media ratio-1-1"><img src="assets/img/orbit-raster-atelier-main.jpg" alt="Không gian ORBIT Atelier cao cấp với bàn đá/kim loại tối, khay trưng bày nhẫn bạc, ghế đơn và hệ tủ tối giản." loading="lazy" decoding="async"></div>
             <span><strong>ORBIT Atelier — Trung tâm</strong><span>Không gian tư vấn chính · Mở cửa theo lịch hẹn từ Thứ Ba đến Chủ Nhật</span></span>
           </label>
           <label class="location">
-            <input type="radio" name="location" value="ORBIT Private Room" >
-            <div class="media ratio-1-1"><img src="assets/img/atelier-private-room.jpg" alt="ORBIT Private Room" loading="lazy" decoding="async"></div>
+            <input type="radio" name="option" value="ORBIT Private Room" >
+            <div class="media ratio-1-1"><img src="assets/img/orbit-raster-atelier-private-room.jpg" alt="Không gian ORBIT Private Room kín đáo hơn, bàn thử trang sức cho tư vấn riêng." loading="lazy" decoding="async"></div>
             <span><strong>ORBIT Private Room</strong><span>Không gian kín dành cho khách cần thêm thời gian thử và tư vấn kích thước</span></span>
           </label>
       </div>
@@ -277,9 +268,10 @@
 >
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <circle cx="12" cy="10" r="3" />
-</svg></span> Địa điểm</dt><dd data-sum="location">ORBIT Atelier — Trung tâm</dd></div>
+</svg></span> Địa điểm</dt><dd data-sum="option"></dd></div>
         </dl>
-        <a class="btn btn--accent" href="#contact-form">Tiếp tục nhập thông tin<span class="icon"><svg aria-hidden="true" focusable="false"
+        
+        <a class="btn btn--accent" href="#contact-form">Nhập thông tin liên hệ<span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -298,20 +290,12 @@
     </div>
   </div>
 </section>
-<section class="section" id="contact-form">
+<section class="section t-contact_form" id="contact-form">
   <div class="container form-layout">
-    <div class="reveal stack"><p class="eyebrow">BƯỚC 02</p>
+    <div class="reveal stack"><p class="eyebrow">Bước 2</p>
 <h2>Thông tin liên hệ</h2>
 <p class="lead">ORBIT sử dụng thông tin này để xác nhận lịch và chuẩn bị trước các tác phẩm bạn muốn trải nghiệm.</p></div>
-    <form class="form-grid reveal" novalidate data-booking-form>
-      <div class="field"><label for="f-name">Họ và tên <span class="req">*</span></label>
-        <input id="f-name" name="name" autocomplete="name" required placeholder="Nguyễn Thị Minh Anh"><p class="hint">Trường bắt buộc</p></div>
-      <div class="field"><label for="f-phone">Số điện thoại <span class="req">*</span></label>
-        <input id="f-phone" name="phone" type="tel" autocomplete="tel" required pattern="[0-9 +]{9,15}" placeholder="0901 234 567"><p class="hint">Trường bắt buộc để xác nhận lịch</p></div>
-      <div class="field"><label for="f-email">Email</label>
-        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="minhanh@example.com"><p class="hint">Nhận thông tin lịch hẹn và hướng dẫn trước khi đến</p></div>
-      <div class="field"><label for="f-work">Tác phẩm quan tâm</label>
-        <div class="select-wrap"><select id="f-work" name="work"><option>Nhật Quang</option><option>Vệt Trăng</option><option>Quỹ Đạo</option><option>Khoảng Lặng</option><option>Chưa quyết định</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
+    <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required autocomplete="name" placeholder="Nguyễn Thị Minh Anh"><p class="hint">Trường bắt buộc</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" inputmode="tel" autocomplete="tel" placeholder="0901 234 567"><p class="hint">Trường bắt buộc để xác nhận lịch</p></div><div class="field"><label for="f-2">Email</label><input id="f-2" name="f-2" type="email" inputmode="email" spellcheck="false" autocomplete="email" placeholder="minhanh@example.com"><p class="hint">Nhận thông tin lịch hẹn và hướng dẫn trước khi đến</p></div><div class="field"><label for="f-3">Tác phẩm quan tâm</label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Nhật Quang</option><option>Vệt Trăng</option><option>Quỹ Đạo</option><option>Khoảng Lặng</option><option>Chưa quyết định</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-chevron-down"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -324,9 +308,7 @@
   stroke-linejoin="round"
 >
   <path d="m6 9 6 6 6-6" />
-</svg></span></div><p class="hint">Nhật Quang, Vệt Trăng, Quỹ Đạo, Khoảng Lặng hoặc Chưa quyết định</p></div>
-      <div class="field"><label for="f-size">Kích thước nhẫn hiện tại</label>
-        <div class="select-wrap"><select id="f-size" name="size"><option>Chưa biết kích thước</option><option>Size 08</option><option>Size 10</option><option>Size 12</option><option>Size 14</option><option>Size 16</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
+</svg></span></div><p class="hint">Nhật Quang, Vệt Trăng, Quỹ Đạo, Khoảng Lặng hoặc Chưa quyết định</p></div><div class="field"><label for="f-4">Kích thước nhẫn hiện tại</label><div class="select-wrap"><select id="f-4" name="f-4"><option>Chưa biết kích thước</option><option>Size 08</option><option>Size 10</option><option>Size 12</option><option>Size 14</option><option>Size 16</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-chevron-down"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -339,14 +321,12 @@
   stroke-linejoin="round"
 >
   <path d="m6 9 6 6 6-6" />
-</svg></span></div><p class="hint">Tùy chọn, có thể chọn Chưa biết kích thước</p></div>
-      <div class="field"><label for="f-note">Ghi chú</label>
-        <textarea id="f-note" name="note" rows="2" placeholder="Ví dụ: muốn thử thêm mẫu, tư vấn quà tặng…"></textarea><p class="hint">Nhu cầu thử tác phẩm, dịp sử dụng hoặc yêu cầu hỗ trợ khác</p></div>
+</svg></span></div><p class="hint">Tùy chọn, có thể chọn Chưa biết kích thước</p></div><div class="field"><label for="f-5">Ghi chú</label><textarea id="f-5" name="f-5" rows="2" placeholder="Ví dụ: muốn thử thêm mẫu, tư vấn quà tặng…"></textarea><p class="hint">Nhu cầu thử tác phẩm, dịp sử dụng hoặc yêu cầu hỗ trợ khác</p></div>
     </form>
-    <aside class="summary reveal" aria-live="polite">
-      <h3>Thông tin đã chọn</h3>
-      <dl>
-        <div><dt><span class="icon"><svg aria-hidden="true" focusable="false"
+      <aside class="summary" aria-live="polite">
+        <h3>Thông tin đã chọn</h3>
+        <dl>
+          <div><dt><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-calendar-days"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -369,7 +349,7 @@
   <path d="M12 17h.01" />
   <path d="M16 17h.01" />
 </svg></span> Ngày</dt><dd data-sum="date">Chưa chọn</dd></div>
-        <div><dt><span class="icon"><svg aria-hidden="true" focusable="false"
+          <div><dt><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-clock"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -384,7 +364,7 @@
   <circle cx="12" cy="12" r="10" />
   <path d="M12 6v6l4 2" />
 </svg></span> Khung giờ</dt><dd data-sum="time">Chưa chọn</dd></div>
-        <div><dt><span class="icon"><svg aria-hidden="true" focusable="false"
+          <div><dt><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-map-pin"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -398,17 +378,16 @@
 >
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <circle cx="12" cy="10" r="3" />
-</svg></span> Địa điểm</dt><dd data-sum="location"></dd></div>
-      </dl>
-      <p class="small muted" style="margin-top:16px">Tác phẩm quan tâm</p>
-      <p data-sum="work" style="font-family:var(--font-heading);font-size:22px">Nhật Quang</p>
-      <div class="media summary__thumb"><img src="assets/img/nhat-quang-main.jpg" alt="Nhẫn Nhật Quang" loading="lazy" decoding="async"></div>
-    </aside>
+</svg></span> Địa điểm</dt><dd data-sum="option"></dd></div>
+        </dl><p class="small muted" style="margin-top:16px">Tác phẩm quan tâm</p><p data-sum="focus" style="font-family:var(--font-heading);font-size:22px"></p>
+        <div class="media summary__thumb"><img src="assets/img/orbit-raster-nhat-quang-main.jpg" alt="Nhẫn bạc điêu khắc Nhật Quang, góc ba phần tư, hình khối uốn lượn phản sáng lạnh; đây là ảnh nhận diện chính của tác phẩ" loading="lazy" decoding="async"></div>
+        
+      </aside>
   </div>
 </section>
-<section class="section" id="confirmation-preview">
+<section class="section t-confirm_review" id="confirmation-preview">
   <div class="container confirm">
-    <div class="reveal stack"><p class="eyebrow">BƯỚC 03</p>
+    <div class="reveal stack"><p class="eyebrow">Bước 3</p>
 <h2>Kiểm tra lịch hẹn</h2>
 <p class="lead">Vui lòng kiểm tra lại thông tin. Sau khi xác nhận, ORBIT sẽ gửi thông tin lịch hẹn qua email và liên hệ khi cần bổ sung chi tiết.</p></div>
     <div class="confirm__card reveal">
@@ -465,7 +444,7 @@
 >
   <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
   <circle cx="12" cy="10" r="3" />
-</svg></span><span class="label">Địa điểm</span><span class="value" data-sum="location">Chưa chọn</span><a href="#booking-selector">Thay đổi</a></div>
+</svg></span><span class="label">Địa điểm</span><span class="value" data-sum="option">Chưa chọn</span><a href="#booking-selector">Thay đổi</a></div>
           <div class="confirm__row"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -479,7 +458,7 @@
   stroke-linejoin="round"
 >
   <circle cx="12" cy="12" r="10" />
-</svg></span><span class="label">Tác phẩm</span><span class="value" data-sum="work">Chưa chọn</span><a href="#contact-form">Thay đổi</a></div>
+</svg></span><span class="label">Tác phẩm quan tâm</span><span class="value" data-sum="focus">Chưa chọn</span><a href="#contact-form">Thay đổi</a></div>
       </div>
       <div class="confirm__side">
         <div class="principle"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -498,7 +477,7 @@
   <path d="m15 5 4 4" />
 </svg></span><div><h3>Thay đổi lịch</h3><p>Có thể yêu cầu thay đổi trước giờ hẹn tối thiểu 4 giờ.</p></div></div>
         <div>
-          <button class="btn btn--accent" type="button" data-confirm>Xác nhận lịch hẹn<span class="icon"><svg aria-hidden="true" focusable="false"
+          <button class="btn btn--accent" type="button" data-confirm>Giữ lịch hẹn này<span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -513,34 +492,20 @@
   <path d="M5 12h14" />
   <path d="m12 5 7 7-7 7" />
 </svg></span></button>
-          <p class="confirm__done" data-confirm-done>Đây là website demo — lịch hẹn không được gửi đi. Liên hệ Lạc Việt Media để có website đặt lịch thật cho thương hiệu của bạn.</p>
+          <p class="confirm__done" data-confirm-done>Đây là website demo — thông tin không được gửi đi. Liên hệ Lạc Việt Media để có website đặt lịch thật cho thương hiệu của bạn.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="section section--flush" id="atelier-info">
+<section class="section band section--flush t-info_split" id="atelier-info">
   <div class="atelier">
-    <div class="media "><img src="assets/img/atelier-main.jpg" alt="Không gian ORBIT Atelier" loading="lazy" decoding="async"></div>
+    <div class="media "><img src="assets/img/orbit-raster-atelier-main.jpg" alt="Không gian ORBIT Atelier cao cấp với bàn đá/kim loại tối, khay trưng bày nhẫn bạc, ghế đơn và hệ tủ tối giản." loading="lazy" decoding="async"></div>
     <div class="atelier__body reveal stack">
-      <p class="eyebrow">THÔNG TIN ATELIER</p>
+      <p class="eyebrow">Trước khi đến atelier</p>
 <h2>Một không gian dành cho việc nhìn kỹ và thử chậm</h2>
 <p class="lead">Atelier ORBIT được thiết kế như một gallery nhỏ, với ánh sáng tập trung vào chất liệu và hình khối. Bạn nên đến đúng giờ để có trọn vẹn thời lượng tư vấn đã đặt.</p>
-      <a class="btn" href="#atelier-info" >Xem hướng dẫn trước buổi hẹn<span class="icon"><svg aria-hidden="true" focusable="false"
-  class="lucide lucide-arrow-right"
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></span></a>
+      <a class="btn" href="#booking-selector">Chuẩn bị cho buổi thử</a>
       <div class="info-grid"><div class="fact"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-map-pin"
   xmlns="http://www.w3.org/2000/svg"
@@ -616,6 +581,7 @@
     <p class="footer-credit">Thiết kế bởi <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a><small>Website demo — thương hiệu mẫu · <a href="https://demo.lacviet.media/">Xem thêm website demo</a></small></p>
   </div>
 </footer>
-<script src="assets/js/site.js" defer></script>
+<div class="wordmark" aria-hidden="true" translate="no">ORBIT</div>
+<script src="assets/js/site.js" defer></script><script src="assets/js/motion.js" defer></script>
 </body>
 </html>
