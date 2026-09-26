@@ -1,6 +1,8 @@
 <!doctype html>
-<html lang="vi">
+<html lang="vi" class="fx-load fx-img card-style-caption">
 <head>
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
+<script type="application/json" id="fx-config">{"load_sequence": true, "split_headings": "hero", "image_reveal": true, "parallax": 0.08, "stagger": true, "magnetic": true, "scroll_progress": false, "wordmark": true}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Đặt lịch đánh giá vận động | MOVE+</title>
@@ -11,7 +13,7 @@
 <meta property="og:title" content="Đặt lịch đánh giá vận động | MOVE+">
 <meta property="og:description" content="Đặt lịch đánh giá vận động tại MOVE+, chọn khung giờ và mục tiêu cần hỗ trợ trước khi gặp chuyên viên phục hồi.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-move-plus/assets/img/og.jpg">
-<meta name="theme-color" content="#10151B">
+<meta name="theme-color" content="#0C1116">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,24 +51,9 @@
 <section class="section t-booking_intro" id="dat-lich-intro" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
-      <p class="eyebrow">ĐẶT LỊCH MOVE+</p>
-<h1>Dành một buổi để hiểu rõ cách cơ thể đang vận động</h1>
+      <h1>Dành một buổi để hiểu rõ cách cơ thể đang vận động</h1>
 <p class="lead">Buổi đánh giá ban đầu giúp ghi nhận triệu chứng, thói quen vận động, biên độ, sức mạnh và các động tác liên quan trước khi đề xuất lộ trình tiếp theo.</p>
-      <div class="btn-row"><a class="btn" href="#chon-lich">Chọn ngày và khung giờ<span class="icon"><svg aria-hidden="true" focusable="false"
-  class="lucide lucide-arrow-right"
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></span></a></div>
+      <div class="btn-row"><a class="btn" href="#chon-lich">Xem lịch còn trống</a></div>
     </div>
     <div class="media "><img src="assets/img/img-booking-intro.jpg" alt="Người tập đến MOVE+ cho buổi đánh giá vận động đầu tiên." fetchpriority="high"></div>
     <div class="benefits reveal"><div class="benefit"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -116,10 +103,9 @@
 </svg></span><div><strong>Mang theo thông tin liên quan</strong><p>Có thể chuẩn bị kết quả chẩn đoán hình ảnh hoặc hướng dẫn y khoa trước đó nếu có sẵn.</p></div></div></div>
   </div>
 </section>
-<section class="section t-booking_selector" id="chon-lich">
+<section class="section band t-booking_selector" id="chon-lich">
   <div class="container booking">
-    <div class="reveal stack"><p class="eyebrow">CHỌN LỊCH</p>
-<h2>Chọn thời gian và hình thức đánh giá phù hợp</h2>
+    <div class="reveal stack"><h2>Chọn thời gian và hình thức đánh giá phù hợp</h2>
 <p class="lead">Mỗi khung giờ được giới hạn để chuyên viên có đủ thời gian đánh giá và trao đổi kết quả ngay trong buổi hẹn.</p></div>
     <div class="booking__steps reveal">
       <div class="bk-col is-active" data-step="date">
@@ -285,7 +271,7 @@
 </svg></span> Hình thức đánh giá</dt><dd data-sum="option"></dd></div>
         </dl>
         
-        <a class="btn btn--accent" href="#thong-tin-khach-hang">Tiếp tục nhập thông tin<span class="icon"><svg aria-hidden="true" focusable="false"
+        <a class="btn btn--accent" href="#thong-tin-khach-hang">Dùng khung giờ này<span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -306,7 +292,7 @@
 </section>
 <section class="section t-contact_form" id="thong-tin-khach-hang">
   <div class="container form-layout">
-    <div class="reveal stack"><p class="eyebrow">THÔNG TIN NGƯỜI ĐẶT</p>
+    <div class="reveal stack"><p class="eyebrow">Mục tiêu vận động</p>
 <h2>Cho MOVE+ biết mục tiêu bạn muốn cải thiện</h2>
 <p class="lead">Thông tin này giúp chuyên viên chuẩn bị nội dung đánh giá phù hợp trước khi bạn đến.</p></div>
     <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required autocomplete="name" placeholder="Nguyễn Minh Anh"><p class="hint">Nhập tên người trực tiếp tham gia buổi đánh giá.</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"><p class="hint">MOVE+ dùng số này để xác nhận lịch hẹn.</p></div><div class="field"><label for="f-2">Email</label><input id="f-2" name="f-2" type="email" inputmode="email" spellcheck="false" autocomplete="email" placeholder="ban@example.com"><p class="hint">Có thể dùng để nhận thông tin lịch hẹn và hướng dẫn chuẩn bị.</p></div><div class="field"><label for="f-3">Mục bạn quan tâm <span class="req">*</span></label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Trị liệu đau mỏi cổ vai gáy</option><option>Phục hồi chấn thương thể thao</option><option>Lộ trình phục hồi cá nhân hóa</option><option>Theo dõi tiến độ vận động</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -386,10 +372,9 @@
       </aside>
   </div>
 </section>
-<section class="section t-confirm_review" id="xac-nhan">
+<section class="section band t-confirm_review" id="xac-nhan">
   <div class="container confirm">
-    <div class="reveal stack"><p class="eyebrow">XÁC NHẬN LỊCH</p>
-<h2>Kiểm tra lại thông tin trước khi gửi yêu cầu</h2>
+    <div class="reveal stack"><h2>Kiểm tra lại thông tin trước khi gửi yêu cầu</h2>
 <p class="lead">MOVE+ sẽ hiển thị ngày, giờ, hình thức đánh giá, thông tin liên hệ và mục bạn quan tâm để bạn rà soát lần cuối.</p></div>
     <div class="confirm__card reveal">
       <div class="confirm__rows">
@@ -482,7 +467,7 @@
   <circle cx="16" cy="16" r="6" />
 </svg></span><div><h3>Chính sách thay đổi lịch</h3><p>Nếu cần đổi hoặc hủy lịch, vui lòng thông báo trước tối thiểu 4 giờ để MOVE+ có thể sắp xếp lại khung giờ đánh giá. Yêu cầu đặt lịch chỉ được xem là hoàn tất sau khi có xác nhận từ MOVE+.</p></div></div>
         <div>
-          <button class="btn btn--accent" type="button" data-confirm>Gửi yêu cầu đặt lịch<span class="icon"><svg aria-hidden="true" focusable="false"
+          <button class="btn btn--accent" type="button" data-confirm>Gửi yêu cầu tới MOVE+<span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-arrow-right"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -507,24 +492,10 @@
   <div class="atelier">
     <div class="media "><img src="assets/img/img-booking-info.jpg" alt="Người tập chuẩn bị cơ thể trước buổi đánh giá vận động." loading="lazy" decoding="async"></div>
     <div class="atelier__body reveal stack">
-      <p class="eyebrow">TRƯỚC KHI ĐẾN</p>
+      <p class="eyebrow">Trước buổi đánh giá</p>
 <h2>Chuẩn bị đơn giản để buổi đánh giá phản ánh đúng khả năng vận động</h2>
 <p class="lead">Bạn không cần tập thử trước hay cố gắng thể hiện tốt hơn bình thường. Hãy đến với trạng thái vận động quen thuộc để chuyên viên quan sát được vấn đề thực tế.</p>
-      <a class="btn" href="dich-vu.html">Xem dịch vụ phục hồi<span class="icon"><svg aria-hidden="true" focusable="false"
-  class="lucide lucide-arrow-right"
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></span></a>
+      <a class="btn" href="dich-vu.html">Xem buổi đánh giá gồm những gì</a>
       <div class="info-grid"><div class="fact"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-timer"
   xmlns="http://www.w3.org/2000/svg"
@@ -599,6 +570,7 @@
     <p class="footer-credit">Thiết kế bởi <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a><small>Website demo — thương hiệu mẫu · <a href="https://demo.lacviet.media/">Xem thêm website demo</a></small></p>
   </div>
 </footer>
-<script src="assets/js/site.js" defer></script>
+<div class="wordmark" aria-hidden="true" translate="no">MOVE+</div>
+<script src="assets/js/site.js" defer></script><script src="assets/js/motion.js" defer></script>
 </body>
 </html>

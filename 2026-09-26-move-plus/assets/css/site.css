@@ -1,14 +1,14 @@
 :root {
-  --bg: #10151B; --surface: #1E2229; --text: #FFFFFF; --muted: #AAB2BC; --accent: #E53935; --border: #39424D;
-  --accent-text: #E95A57;
-  --border-strong: #575E68; --text-soft: #D4D5D6; --text-disabled: #53575B;
-  --placeholder: #707376; --header-bg: rgba(16, 21, 27, 0.88); --sticky-bg: rgba(16, 21, 27, 0.94);
-  --accent-soft: rgba(229, 57, 53, 0.1); --panel-bg: #171C22; --panel-border: #2B323C;
-  --on-accent: #10151B; --error: #E5484D; --overlay: rgba(0, 0, 0, .92);
+  --bg: #0C1116; --surface: #171D23; --text: #F4F6F7; --muted: #9BA5AF; --accent: #E23B36; --border: #303941;
+  --accent-text: #E6534F;
+  --border-strong: #4D555C; --text-soft: #CACDCE; --text-disabled: #4D5155;
+  --placeholder: #696D70; --header-bg: rgba(12, 17, 22, 0.88); --sticky-bg: rgba(12, 17, 22, 0.94);
+  --accent-soft: rgba(226, 59, 54, 0.1); --panel-bg: #12171C; --panel-border: #232B32;
+  --on-accent: #0C1116; --error: #E5484D; --overlay: rgba(0, 0, 0, .92);
   --font-heading: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 12px;
-  --btn-bg: #DA3632; --btn-fg: #FFFFFF; --btn-hover-bg: #DE4E4B; --btn-radius: 10px;
+  --btn-bg: #D73833; --btn-fg: #FFFFFF; --btn-hover-bg: #DA4F4B; --btn-radius: 6px;
   color-scheme: dark;
 }
 /* Lạc Việt demo kit v1 — layout rhythm approved by ChatGPT design review (ORBIT pilot, 3 rounds, 2026-09-26).
@@ -545,9 +545,6 @@ section[id], [id].section { scroll-margin-top: 96px; }
   .card__title { font-size: 19px; font-weight: 600; }
   .eyebrow { font-size: 12px; letter-spacing: .12em; }
   h2 { font-size: 46px; }
-  .btn { min-height: 46px; padding: 0 24px; box-shadow: 0 8px 24px rgba(229, 57, 53, .18); }
-  .btn--ghost { box-shadow: none; border-color: #5B626B; color: #F3F4F5; }
-  .btn--ghost:hover { border-color: #E53935; color: #F3F4F5; }
   /* index: service cards as real cards */
   .t-card_grid .collection__grid { gap: 18px; }
   .t-card_grid .card { background: #121A22; border: 1px solid rgba(255, 255, 255, .10); border-radius: 8px; overflow: hidden; padding-bottom: 20px; }
@@ -560,7 +557,6 @@ section[id], [id].section { scroll-margin-top: 96px; }
   .t-cta_banner .appointment > .media { order: 2; min-height: 0; max-height: 400px; height: 400px; }
   .t-cta_banner .appointment__body { order: 1; padding-left: 0; }
   /* alternating section tone */
-  .t-card_grid, .t-quote_principles, .t-gallery, .t-story_split, .t-contact_form { background: #141A21; }
   .panel, .bk-col, .summary, .form-grid, .confirm__card { background: #181F27; border-color: #2A313A; }
   /* dich-vu */
   .product { grid-template-columns: 58fr 42fr; }
@@ -614,3 +610,93 @@ section[id], [id].section { scroll-margin-top: 96px; }
   .t-booking_selector .summary .btn { width: auto; margin-top: 0; }
   .t-booking_selector { padding-top: 80px; padding-bottom: 88px; }
 }
+
+/* Lạc Việt demo kit — motion + art-direction variants. Everything animated lives under html.fx,
+   which is only set when the visitor does not prefer reduced motion. */
+
+/* media: individual transform properties so hover/reveal (scale) and parallax (translate) compose */
+.media img { transform: none; transition: scale 1.2s var(--ease); }
+.media:hover img { transform: none; scale: 1.035; }
+
+/* split headings */
+.fx .fx-split .ln { display: block; overflow: hidden; padding-bottom: .06em; margin-bottom: -.06em; }
+.fx .fx-split .ln__i { display: inline-block; translate: 0 108%; transition: translate 1.05s cubic-bezier(.2, .75, .1, 1) calc(var(--i) * 95ms); }
+.fx .fx-split.is-in .ln__i { translate: 0 0; }
+
+/* image reveal: clip wipe + settle */
+.fx .fx-reveal { clip-path: inset(100% 0 0 0); transition: clip-path 1.25s cubic-bezier(.75, 0, .2, 1); }
+.fx .fx-reveal img { scale: 1.16; transition: scale 1.8s cubic-bezier(.2, .7, .1, 1); }
+.fx .fx-reveal.is-in { clip-path: inset(0 0 0 0); }
+.fx .fx-reveal.is-in img { scale: 1; }
+.fx .fx-reveal.is-in:hover img { scale: 1.035; }
+
+/* stagger lists */
+.fx .fx-stagger > * { opacity: 0; translate: 0 22px; transition: opacity .8s var(--ease), translate .9s var(--ease); transition-delay: calc(var(--i) * 85ms + 120ms); }
+.fx .fx-stagger.is-in > * { opacity: 1; translate: 0 0; }
+
+/* hero choreography on load */
+.fx.fx-load .hero__content > :not(h1), .fx.fx-load .product__info > :not(h1), .fx.fx-load .intro__content > :not(h1) { opacity: 0; translate: 0 16px; transition: opacity .9s var(--ease) .55s, translate .9s var(--ease) .55s; }
+.fx.fx-load .is-in .hero__content > *, .fx.fx-load .product.is-in .product__info > *, .fx.fx-load .intro.is-in .intro__content > *,
+.fx.fx-load .hero.is-in .hero__content > * { opacity: 1; translate: 0 0; }
+.fx.fx-load .site-header { animation: fx-header .9s var(--ease) both; }
+@keyframes fx-header { from { opacity: 0; translate: 0 -12px; } to { opacity: 1; translate: 0 0; } }
+
+/* magnetic buttons */
+.fx .btn { transition: background .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease), translate .35s cubic-bezier(.2, .9, .2, 1.2); }
+.fx .btn:hover, .fx .btn:focus-visible { transform: none; }
+
+/* scroll progress */
+.fx-progress { position: fixed; left: 0; right: 0; top: 0; height: 2px; z-index: 120; background: var(--accent); transform-origin: 0 50%; scale: 0 1; pointer-events: none; }
+
+/* marquee band (content from spec) */
+.marquee { border-block: 1px solid var(--border); overflow: hidden; padding-block: 22px; background: var(--bg); }
+.marquee__track { display: flex; gap: 56px; width: max-content; }
+.marquee__track span { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 56px); white-space: nowrap; color: var(--text); }
+.marquee__track span::after { content: ""; display: inline-block; width: .32em; height: .32em; margin-left: 56px; border-radius: 50%; background: var(--accent); vertical-align: middle; }
+.fx .marquee__track { animation: fx-marquee var(--mq, 38s) linear infinite; }
+.fx .marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes fx-marquee { to { translate: -50% 0; } }
+
+/* oversized outline wordmark in the footer */
+.wordmark { font-family: var(--font-heading); font-size: clamp(88px, 19vw, 300px); line-height: .82; letter-spacing: -.03em; white-space: nowrap;
+  color: transparent; -webkit-text-stroke: 1px var(--border-strong); padding: 24px var(--gutter) 0; overflow: hidden; user-select: none; }
+
+/* hero variant: full-bleed image with copy over a legibility gradient */
+@media (min-width: 901px) {
+  .hero--bleed { position: relative; display: block; min-height: 640px; }
+  .hero--bleed .hero__media { position: absolute; inset: 0; }
+  .hero--bleed .hero__media::before { display: none; }
+  .hero--bleed .hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,0) 75%); }
+  .hero--bleed .hero__content { position: relative; z-index: 2; min-height: 640px; max-width: 760px; color: #fff; }
+  .hero--bleed .hero__content .lead, .hero--bleed .hero__meta { color: rgba(255,255,255,.86); }
+  .hero--bleed .btn--ghost { color: #fff; border-color: rgba(255,255,255,.55); }
+}
+@media (max-width: 900px) { .hero--bleed .hero__media { order: -1; } }
+
+/* card styles */
+.card-style-lift .card { transition: translate .5s var(--ease); }
+.card-style-lift .card:hover { translate: 0 -6px; }
+.card-style-lift .card:hover .card__title { color: var(--accent-text); }
+.card-style-caption .collection__grid .card, .card-style-caption .related__grid .card { position: relative; }
+.card-style-caption .collection__grid .card .card__detail, .card-style-caption .related__grid .card .card__detail { max-height: 0; opacity: 0; overflow: hidden; transition: max-height .6s var(--ease), opacity .5s var(--ease); }
+.card-style-caption .collection__grid .card:hover .card__detail, .card-style-caption .related__grid .card:hover .card__detail,
+.card-style-caption .collection__grid .card:focus-visible .card__detail { max-height: 120px; opacity: 1; }
+@media (hover: none) { .card-style-caption .card .card__detail { max-height: none; opacity: 1; } }
+
+/* tonal bands chosen per section */
+.section.band { background: var(--surface); }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { flex-wrap: wrap; width: auto; }
+  .media img, .btn, .card { transition: none !important; }
+}
+/* no flash: hero headline waits for the line split when the load sequence is on */
+.fx.fx-load .hero h1:not(.fx-split), .fx.fx-load .product h1:not(.fx-split), .fx.fx-load .intro h1:not(.fx-split) { opacity: 0; }
+/* no flash: with load_sequence + image_reveal the hero image starts covered and only appears via the wipe */
+.fx.fx-load.fx-img .hero__media .media:not(.is-in),
+.fx.fx-load.fx-img .product > .media:not(.is-in),
+.fx.fx-load.fx-img .intro > .media:not(.is-in) { clip-path: inset(100% 0 0 0); }
+
+/* spec flags */
+.btn, .header-cta, .summary .btn { text-transform: none; letter-spacing: .01em; font-size: 14px; }
+.reveal { opacity: 1; transform: none; transition: none; }
