@@ -19,11 +19,12 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Bỏ qua đến nội dung</a>
 
 <div class="demo-ribbon">Website demo — thương hiệu mẫu do <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a> thiết kế</div>
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html" aria-label="MỘC TABLE — Trang chủ">MỘC TABLE</a>
+    <a class="logo" href="index.html" aria-label="MỘC TABLE — Trang chủ" translate="no">MỘC TABLE</a>
     <nav class="nav" aria-label="Điều hướng chính"><a href="index.html">Trang chủ</a><a href="thuc-don.html">Thực đơn</a><a href="dat-ban.html" aria-current="page">Đặt bàn</a></nav>
     <a class="btn header-cta" href="dat-ban.html">Đặt bàn trải nghiệm</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Mở menu"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -44,7 +45,7 @@
 </svg></span></button>
   </div>
 </header>
-<main>
+<main id="main">
 <section class="section t-booking_intro" id="dat-ban-intro" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
@@ -312,7 +313,7 @@
     <div class="reveal stack"><p class="eyebrow">Bước 2 · Thông tin liên hệ</p>
 <h2>Cho MỘC TABLE biết cách chuẩn bị cho bàn của bạn</h2>
 <p class="lead">Thông tin được dùng để liên hệ xác nhận, chuẩn bị loại bàn và ghi nhận nhu cầu ăn uống trước buổi dùng bữa.</p></div>
-    <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required placeholder="Nguyễn Minh Anh"><p class="hint">Tên người đại diện đặt bàn.</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" placeholder="09xx xxx xxx"><p class="hint">Dùng để xác nhận hoặc liên hệ khi có thay đổi về bàn.</p></div><div class="field"><label for="f-2">Email <span class="req">*</span></label><input id="f-2" name="f-2" type="email" required placeholder="minhanh@example.com"><p class="hint">Thông tin xác nhận sẽ được gửi đến địa chỉ này.</p></div><div class="field"><label for="f-3">Trải nghiệm quan tâm <span class="req">*</span></label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Thực đơn 9 món theo mùa</option><option>Thực đơn 9 món + phối rượu sommelier</option><option>Quầy chef counter</option><option>Phòng tiệc riêng</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
+    <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required autocomplete="name" placeholder="Nguyễn Minh Anh"><p class="hint">Tên người đại diện đặt bàn.</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"><p class="hint">Dùng để xác nhận hoặc liên hệ khi có thay đổi về bàn.</p></div><div class="field"><label for="f-2">Email <span class="req">*</span></label><input id="f-2" name="f-2" type="email" required inputmode="email" spellcheck="false" autocomplete="email" placeholder="minhanh@example.com"><p class="hint">Thông tin xác nhận sẽ được gửi đến địa chỉ này.</p></div><div class="field"><label for="f-3">Trải nghiệm quan tâm <span class="req">*</span></label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Thực đơn 9 món theo mùa</option><option>Thực đơn 9 món + phối rượu sommelier</option><option>Quầy chef counter</option><option>Phòng tiệc riêng</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-chevron-down"
   xmlns="http://www.w3.org/2000/svg"
  
