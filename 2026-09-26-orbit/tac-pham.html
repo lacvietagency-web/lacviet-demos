@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="vi" class="fx-load card-style-caption link-underline fx-grain">
+<html lang="vi" class="fx-load card-style-caption btn-fill link-underline">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"page": {"view_transition": "wipe", "cursor": true, "grain": true, "progress": false}, "hover": {"cards": "spotlight", "buttons": "magnetic", "links": "underline"}, "parallax_strength": 0.08}</script>
+<script type="application/json" id="fx-config">{"tempo": "calm", "reveal": {"image": "left", "text": "rise"}, "hero": "curtain", "smooth_scroll": true, "hover": {"cards": "spotlight", "buttons": "fill", "links": "underline"}, "page": {"view_transition": "fade", "cursor": false, "grain": false, "progress": false}, "three_url": "assets/js/ring3d.js", "three_colors": {"metal": "#F5F7F8", "accent": "#A8D8EA"}}</script>
+<script type="importmap">{"imports":{"three":"./assets/js/three.module.js"}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Nhật Quang — Nhẫn bạc điêu khắc | ORBIT</title>
@@ -14,7 +15,7 @@
 <meta property="og:description" content="Khám phá chi tiết nhẫn bạc điêu khắc Nhật Quang của ORBIT với gallery nhiều góc chụp, bảng kích thước, chất liệu và tùy chọn đặt lịch thử trực tiếp tại atelier.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-orbit/assets/img/og.jpg">
 <meta name="theme-color" content="#07090C">
-<meta name="build-id" content="20260927022147">
+<meta name="build-id" content="20260927031730">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +50,7 @@
   </div>
 </header>
 <main id="main">
-<section class="section section--flush t-detail_hero" id="product-hero" data-fx-hero="" data-fx-heading="blur" data-fx-image="zoom-out" data-fx-scroll="parallax">
+<section class="section section--flush t-detail_hero" id="product-hero" data-fx-hero="">
   <div class="product">
     <div class="media "><img src="assets/img/orbit-raster-nhat-quang-main.jpg" alt="Nhẫn bạc điêu khắc Nhật Quang, góc ba phần tư, hình khối uốn lượn phản sáng lạnh; đây là ảnh nhận diện chính của tác phẩ" fetchpriority="high"></div>
     <div class="product__info stack reveal">
@@ -105,7 +106,7 @@
   </div>
   <div class="sticky-cta"><a class="btn" href="dat-lich.html?focus=Nh%E1%BA%ADt%20Quang">Thử Nhật Quang tại atelier</a></div>
 </section>
-<section class="section t-gallery" id="gallery" data-fx-image="blinds" data-fx-list="scale" data-fx-scroll="zoom">
+<section class="section t-gallery" id="gallery" data-moment="horizontal">
   <div class="container gallery">
     <div class="reveal stack">
       <h2>Chi tiết tác phẩm điêu khắc</h2>
@@ -201,7 +202,7 @@
 </svg></span></button>
   </div>
 </section>
-<section class="section band t-info_panels" id="size-material" data-fx-heading="chars" data-fx-image="focus" data-fx-list="flip">
+<section class="section band t-info_panels" id="size-material">
   <div class="container panels">
     <div class="reveal stack">
       <p class="eyebrow">Chất liệu &amp; kích thước</p>
@@ -280,7 +281,7 @@
     </div>
   </div>
 </section>
-<section class="section t-story_split" id="design-story" data-fx-heading="words" data-fx-image="curtain" data-fx-list="rise" data-fx-scroll="text-fill">
+<section class="section t-story_split" id="design-story" data-moment="3d">
   <div class="container story">
     <div class="reveal"><div class="media ratio-4-3"><img src="assets/img/orbit-raster-nhat-quang-design-story.jpg" alt="Nhẫn Nhật Quang đặt trên bàn chế tác cạnh bản phác thảo chì và dụng cụ kim hoàn." loading="lazy" decoding="async"></div></div>
     <div class="reveal stack">
@@ -334,7 +335,7 @@
     </div>
   </div>
 </section>
-<section class="section t-related_cards" id="related-products" data-fx-heading="lines" data-fx-image="diagonal" data-fx-list="slide" data-fx-scroll="tilt">
+<section class="section t-related_cards" id="related-products">
   <div class="container related">
     <div class="reveal stack">
       <h2>Tác phẩm liên quan</h2>
@@ -360,7 +361,7 @@
     </div>
   </div>
 </section>
-<section class="section section--flush t-cta_split" id="appointment-cta" data-fx-heading="wipe" data-fx-image="iris">
+<section class="section section--flush t-cta_split" id="appointment-cta">
   <div class="split">
     <div class="split__media"><div class="media "><img src="assets/img/orbit-raster-nhat-quang-tryon.jpg" alt="Bàn tay đeo nhẫn Nhật Quang tại atelier" loading="lazy" decoding="async"></div></div>
     <div class="split__body" style="grid-template-columns:1fr">
@@ -430,6 +431,10 @@
   </div>
 </footer>
 <div class="wordmark" aria-hidden="true" translate="no">ORBIT</div>
-<script src="assets/js/site.js" defer></script><script src="assets/js/motion.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/lenis.min.js" defer></script>
+<script src="assets/js/motion4.js" defer></script>
 </body>
 </html>

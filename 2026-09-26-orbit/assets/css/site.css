@@ -538,80 +538,11 @@ section[id], [id].section { scroll-margin-top: 96px; }
 
 /* Lạc Việt demo kit — motion variants v3 + art-direction variants.
    Hidden/animated states only exist under html.fx (never set for prefers-reduced-motion). */
-@property --blind { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
 
 /* media: individual transform properties so hover (scale), reveal and scroll effects compose */
 .media img { transform: none; transition: scale 1.2s var(--ease), filter 1.2s var(--ease), opacity 1.2s var(--ease); }
 .media:hover img { transform: none; scale: 1.035; }
 .fx .fxs-parallax img, .fx .fxs-zoom img, .fx .fxs-tilt img { transition: filter 1.2s var(--ease), opacity 1.2s var(--ease); }
-
-/* ---------------- headings ---------------- */
-.fx .fxh .ln { display: block; overflow: hidden; padding-bottom: .08em; margin-bottom: -.08em; }
-.fx .fxh-lines .ln__i { display: inline-block; translate: 0 110%; transition: translate 1.05s cubic-bezier(.2, .75, .1, 1) calc(var(--i) * 95ms); }
-.fx .fxh-lines.is-in .ln__i { translate: 0 0; }
-
-.fx .fxh .wd { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
-.fx .fxh-words .wd__i { display: inline-block; translate: 0 105%; rotate: 7deg; transform-origin: 0 100%; transition: translate .95s cubic-bezier(.2, .75, .1, 1) calc(var(--i) * 55ms), rotate .95s cubic-bezier(.2, .75, .1, 1) calc(var(--i) * 55ms); }
-.fx .fxh-words.is-in .wd__i { translate: 0 0; rotate: 0deg; }
-
-.fx .fxh .wdn { display: inline-block; white-space: nowrap; }
-.fx .fxh-chars .ch { display: inline-block; opacity: 0; translate: 0 .4em; filter: blur(6px); transition: opacity .6s var(--ease) calc(var(--i) * 16ms), translate .7s var(--ease) calc(var(--i) * 16ms), filter .7s var(--ease) calc(var(--i) * 16ms); }
-.fx .fxh-chars.is-in .ch { opacity: 1; translate: 0 0; filter: blur(0); }
-
-.fx .fxh-wipe { clip-path: inset(-5% 100% -5% 0); transition: clip-path 1.2s cubic-bezier(.75, 0, .2, 1); }
-.fx .fxh-wipe.is-in { clip-path: inset(-5% 0 -5% 0); }
-
-.fx .fxh-blur { opacity: 0; filter: blur(16px); translate: 0 14px; transition: opacity 1.1s var(--ease), filter 1.3s var(--ease), translate 1.2s var(--ease); }
-.fx .fxh-blur.is-in { opacity: 1; filter: blur(0); translate: 0 0; }
-
-.fx .fxh-scramble { opacity: 0; transition: opacity .3s; }
-.fx .fxh-scramble.is-in { opacity: 1; }
-
-/* scroll-linked text fill */
-.fx .fxs-fill .wd__i, .fx .fxs-fill .ln__i, .fx .fxs-fill .ch { transition: opacity .35s linear; }
-
-/* ---------------- images ---------------- */
-.fx .fxi { transition: clip-path 1.3s cubic-bezier(.75, 0, .2, 1); }
-.fx .fxi img { scale: 1.16; transition: scale 1.8s cubic-bezier(.2, .7, .1, 1), filter 1.4s var(--ease), opacity 1.2s var(--ease); }
-.fx .fxi.is-in img { scale: 1; }
-.fx .fxi.is-in:hover img { scale: 1.035; }
-.fx .fxi-wipe-up { clip-path: inset(100% 0 0 0); }
-.fx .fxi-wipe-left { clip-path: inset(0 100% 0 0); }
-.fx .fxi-curtain { clip-path: inset(0 50% 0 50%); transition-duration: 1.5s; }
-.fx .fxi-iris { clip-path: circle(0% at 50% 55%); transition-duration: 1.6s; }
-.fx .fxi-diagonal { clip-path: polygon(0 0, 0 0, -40% 100%, -40% 100%); }
-.fx .fxi-wipe-up.is-in, .fx .fxi-wipe-left.is-in, .fx .fxi-curtain.is-in { clip-path: inset(0 0 0 0); }
-.fx .fxi-iris.is-in { clip-path: circle(85% at 50% 55%); }
-.fx .fxi-diagonal.is-in { clip-path: polygon(0 0, 140% 0, 100% 100%, -40% 100%); }
-.fx .fxi-blinds::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: repeating-linear-gradient(to bottom, var(--bg) 0 var(--blind), transparent var(--blind) 12.5%);
-  --blind: 12.5%; transition: --blind 1.3s cubic-bezier(.75, 0, .2, 1); }
-.fx .fxi-blinds.is-in::after { --blind: 0%; }
-.fx .fxi-zoom-out img { scale: 1.45; opacity: 0; }
-.fx .fxi-zoom-out.is-in img { scale: 1; opacity: 1; transition-duration: 2.2s, 1.4s, 1.2s; }
-.fx .fxi-focus img { filter: blur(18px) saturate(.6); scale: 1.08; opacity: .4; }
-.fx .fxi-focus.is-in img { filter: blur(0) saturate(1); scale: 1; opacity: 1; }
-.fx .fxi-panels::before, .fx .fxi-panels::after { content: ""; position: absolute; top: 0; bottom: 0; width: 50.5%; z-index: 1; background: var(--bg);
-  transition: translate 1.4s cubic-bezier(.75, 0, .2, 1) .1s; }
-.fx .fxi-panels::before { left: 0; } .fx .fxi-panels::after { right: 0; }
-.fx .fxi-panels.is-in::before { translate: -101% 0; } .fx .fxi-panels.is-in::after { translate: 101% 0; }
-
-/* ---------------- lists ---------------- */
-.fx .fxl > * { transition: opacity .8s var(--ease), translate .9s var(--ease), scale .9s var(--ease), transform .9s var(--ease);
-  transition-delay: calc(var(--i) * 85ms + 120ms); }
-.fx .fxl-rise > * { opacity: 0; translate: 0 26px; }
-.fx .fxl-slide > * { opacity: 0; translate: 44px 0; }
-.fx .fxl-scale > * { opacity: 0; scale: .9; }
-.fx .fxl-flip { perspective: 1000px; }
-.fx .fxl-flip > * { opacity: 0; transform: rotateX(62deg); transform-origin: 50% 0; }
-.fx .fxl.is-in > * { opacity: 1; translate: 0 0; scale: 1; transform: none; }
-
-/* ---------------- hero on load: covered until its variant takes over ---------------- */
-.fx.fx-load [data-fx-hero] .media:not(.fxi), .fx.fx-load [data-fx-hero] h1:not(.fxh) { opacity: 0; }
-.fx.fx-load [data-fx-hero] :is(.hero__content, .product__info, .intro__content) > :not(h1) { opacity: 0; translate: 0 16px; transition: opacity .9s var(--ease) .6s, translate .9s var(--ease) .6s; }
-.fx.fx-load [data-fx-hero].is-in :is(.hero__content, .product__info, .intro__content) > * { opacity: 1; translate: 0 0; }
-.fx.fx-load .site-header { animation: fx-header .9s var(--ease) both; }
-@keyframes fx-header { from { opacity: 0; translate: 0 -12px; } to { opacity: 1; translate: 0 0; } }
 
 /* ---------------- hover ---------------- */
 .fx .fx-tilt { transition: transform .5s var(--ease); transform-style: preserve-3d; will-change: transform; }
@@ -692,17 +623,38 @@ section[id], [id].section { scroll-margin-top: 96px; }
   .marquee__track { flex-wrap: wrap; width: auto; }
   .media img, .btn, .card { transition: none !important; }
 }
-/* the legibility vignette fades in after the hero reveal so curtains/panels read in the brand colour */
-.fx.fx-load [data-fx-hero] .hero__media::after { opacity: 0; transition: opacity 1.2s var(--ease) .9s; }
-.fx.fx-load [data-fx-hero].is-in .hero__media::after { opacity: 1; }
-/* hero headline waits for the image reveal when the reveal covers the frame (panels / curtain) */
-.fx.fx-load [data-fx-hero][data-fx-image="panels"] .fxh-chars .ch { transition-delay: calc(var(--i) * 16ms + 1s); }
-.fx.fx-load [data-fx-hero][data-fx-image="curtain"] .fxh-words .wd__i { transition-delay: calc(var(--i) * 55ms + .55s); }
+
+/* ---------------- motion v4 ---------------- */
+/* hero stays covered only until its GSAP timeline starts (JS removes .fx-load; safety timeout 2.5s) */
+.fx.fx-load [data-fx-hero] :is(h1, .media, .hero__content > *, .product__info > *, .intro__content > *) { opacity: 0; }
+.fx .w4 { display: inline-block; }
+/* stack moment: the incoming section covers the pinned previous one */
+.m4-stack-top { position: relative; z-index: 2; background: var(--bg); box-shadow: 0 -30px 60px rgba(0, 0, 0, .18); }
+.m4-stack-top.band { background: var(--surface); }
+/* horizontal moment: the card row becomes a single track wider than the viewport */
+@media (min-width: 901px) {
+  .m4-horizontal .collection, .m4-horizontal .gallery, .m4-horizontal .related { grid-template-columns: 1fr; gap: 36px; }
+  .m4-horizontal :is(.collection, .gallery, .related) > * { min-width: 0; }   /* keep the track as wide as the container */
+  .m4-horizontal :is(.collection__grid, .gallery__grid, .related__grid) { display: flex; gap: 24px; overflow: visible; min-width: 0; }
+  .m4-horizontal :is(.collection__grid, .gallery__grid, .related__grid) > * { flex: 0 0 min(34vw, 460px); margin-top: 0 !important; }
+  .m4-horizontal :is(.collection__grid, .gallery__grid, .related__grid) .media { aspect-ratio: 4 / 5; height: auto; }
+  .m4-horizontal { overflow: hidden; }
+}
+/* 3d moment */
+.m4-3d-host { position: relative; background: radial-gradient(ellipse at 50% 45%, var(--surface), var(--bg)); }
+.m4-3d { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 1.2s var(--ease); }
+.m4-3d-host.is-3d-ready .m4-3d { opacity: 1; }
+.m4-3d-host.is-3d-ready img { opacity: 0; transition: opacity 1.2s var(--ease); }
+.fx-progress { transform: scaleX(0); scale: none; }
+.fx-cursor { translate: none; }
+/* the legibility vignette of bleed/center heroes arrives after the image reveal (no grey box while it expands) */
+.fx [data-fx-hero] .hero__media::after { transition: opacity 1s var(--ease) .9s; }
+.fx.fx-load [data-fx-hero] .hero__media::after { opacity: 0; transition: none; }
 
 /* cross-page transition */
 @media (prefers-reduced-motion: no-preference) { @view-transition { navigation: auto; }
-  ::view-transition-old(root) { animation: .8s cubic-bezier(.75,0,.2,1) both vt-hold; } ::view-transition-new(root) { animation: .8s cubic-bezier(.75,0,.2,1) both vt-wipe-in; z-index: 2; } }
-@keyframes vt-hold { to { opacity: .6; } } @keyframes vt-wipe-in { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
+  ::view-transition-old(root) { animation: .35s cubic-bezier(.7,0,.2,1) both vt-fade-out; } ::view-transition-new(root) { animation: .6s cubic-bezier(.2,.7,.1,1) both vt-fade-in; } }
+@keyframes vt-fade-out { to { opacity: 0; } } @keyframes vt-fade-in { from { opacity: 0; } }
 
 /* spec flags */
 .btn, .header-cta, .summary .btn { text-transform: none; letter-spacing: .01em; font-size: 14px; }
