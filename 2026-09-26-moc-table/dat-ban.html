@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="vi" class="fx-load card-style-caption btn-fill link-underline fx-grain">
+<html lang="vi" class="fx-load card-style-caption btn-fill link-underline">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"page": {"view_transition": "fade", "cursor": false, "grain": true, "progress": false}, "hover": {"cards": "tilt", "buttons": "fill", "links": "underline"}, "parallax_strength": 0.12}</script>
+<script type="application/json" id="fx-config">{"tempo": "calm", "reveal": {"image": "up", "text": "rise"}, "hero": "expand", "smooth_scroll": true, "hover": {"cards": "lift", "buttons": "fill", "links": "underline"}, "page": {"view_transition": "fade", "cursor": false, "grain": false, "progress": false}, "three_url": "assets/js/ring3d.js", "three_colors": {"metal": "#1B201A", "accent": "#3F5141"}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Đặt bàn | MỘC TABLE</title>
@@ -14,7 +14,7 @@
 <meta property="og:description" content="Đặt bàn tại MỘC TABLE theo ngày, khung giờ và loại chỗ ngồi, đồng thời gửi trước các yêu cầu ăn uống cho đội ngũ nhà hàng.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-moc-table/assets/img/og.jpg">
 <meta name="theme-color" content="#E9E3D6">
-<meta name="build-id" content="20260927022148">
+<meta name="build-id" content="20260927031746">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,7 @@
   </div>
 </header>
 <main id="main">
-<section class="section t-booking_intro" id="dat-ban-intro" data-fx-hero="" data-fx-heading="lines" data-fx-image="curtain" data-fx-scroll="parallax" style="border-top:0">
+<section class="section t-booking_intro" id="dat-ban-intro" data-fx-hero="" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
       <h1>Dành một buổi tối trọn vẹn cho hành trình vị giác</h1>
@@ -104,7 +104,7 @@
 </svg></span><div><strong>Xác nhận trước buổi dùng bữa</strong><p>Thông tin đặt bàn và yêu cầu đặc biệt sẽ được rà soát trước khi yêu cầu đặt bàn được xác nhận.</p></div></div></div>
   </div>
 </section>
-<section class="section t-booking_selector" id="chon-ban" data-fx-heading="words" data-fx-image="wipe-left" data-fx-list="rise">
+<section class="section t-booking_selector" id="chon-ban">
   <div class="container booking">
     <div class="reveal stack"><p class="eyebrow">Chọn thời gian</p>
 <h2>Chọn thời điểm bạn muốn dùng bữa</h2>
@@ -296,7 +296,7 @@
     </div>
   </div>
 </section>
-<section class="section t-contact_form" id="thong-tin-khach" data-fx-heading="blur" data-fx-image="focus" data-fx-list="slide">
+<section class="section t-contact_form" id="thong-tin-khach">
   <div class="container form-layout">
     <div class="reveal stack"><p class="eyebrow">Thông tin bàn</p>
 <h2>Cho MỘC TABLE biết cách chuẩn bị cho bàn của bạn</h2>
@@ -380,7 +380,7 @@
       </aside>
   </div>
 </section>
-<section class="section t-confirm_review" id="xac-nhan" data-fx-heading="wipe" data-fx-image="blinds" data-fx-list="flip" data-fx-scroll="text-fill">
+<section class="section t-confirm_review" id="xac-nhan">
   <div class="container confirm">
     <div class="reveal stack"><p class="eyebrow">Kiểm tra yêu cầu</p>
 <h2>Xác nhận thông tin trước khi gửi</h2>
@@ -495,7 +495,7 @@
     </div>
   </div>
 </section>
-<section class="section band section--flush t-info_split" id="thong-tin-them" data-fx-image="zoom-out" data-fx-list="scale" data-fx-scroll="parallax">
+<section class="section band section--flush t-info_split" id="thong-tin-them" data-moment="expand">
   <div class="atelier">
     <div class="media "><img src="assets/img/img-booking-info.jpg" alt="Không gian đón khách của MỘC TABLE trước giờ dùng bữa." loading="lazy" decoding="async"></div>
     <div class="atelier__body reveal stack">
@@ -573,6 +573,10 @@
     <p class="footer-credit">Thiết kế bởi <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a><small>Website demo — thương hiệu mẫu · <a href="https://demo.lacviet.media/">Xem thêm website demo</a></small></p>
   </div>
 </footer>
-<script src="assets/js/site.js" defer></script><script src="assets/js/motion.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/lenis.min.js" defer></script>
+<script src="assets/js/motion4.js" defer></script>
 </body>
 </html>
