@@ -2,7 +2,7 @@
 <html lang="vi" class="fx-load card-style-caption btn-fill link-underline">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"page": {"view_transition": "slide", "cursor": false, "grain": false, "progress": true}, "hover": {"cards": "zoom", "buttons": "fill", "links": "underline"}, "parallax_strength": 0.1}</script>
+<script type="application/json" id="fx-config">{"tempo": "energetic", "reveal": {"image": "left", "text": "rise"}, "hero": "rise", "smooth_scroll": true, "hover": {"cards": "lift", "buttons": "fill", "links": "underline"}, "page": {"view_transition": "wipe", "cursor": false, "grain": false, "progress": true}, "three_url": "assets/js/ring3d.js", "three_colors": {"metal": "#F4F6F7", "accent": "#E23B36"}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MOVE+ — Phục hồi vận động chuẩn khoa học</title>
@@ -14,7 +14,7 @@
 <meta property="og:description" content="MOVE+ cung cấp đánh giá vận động, trị liệu đau mỏi và phục hồi chấn thương với lộ trình cá nhân hóa dành cho nhân viên văn phòng và người chơi thể thao.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-move-plus/assets/img/og.jpg">
 <meta name="theme-color" content="#0C1116">
-<meta name="build-id" content="20260927022149">
+<meta name="build-id" content="20260927031803">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,7 @@
   </div>
 </header>
 <main id="main">
-<section class="section hero t-hero_split" id="hero" data-fx-hero="" data-fx-heading="lines" data-fx-image="wipe-up" data-fx-list="rise" data-fx-scroll="parallax">
+<section class="section hero t-hero_split" id="hero" data-fx-hero="">
   <div class="hero__content reveal">
     <h1>Phục hồi vận động chuẩn khoa học cho thể trạng bền bỉ</h1>
 <p class="lead">MOVE+ kết hợp đánh giá tư thế, kiểm tra chức năng vận động và bài tập phục hồi theo từng giai đoạn để giúp bạn giảm khó chịu, lấy lại biên độ khớp và duy trì khả năng vận động ổn định.</p>
@@ -61,7 +61,7 @@
   </div>
   <div class="hero__media"><div class="media "><img src="assets/img/img-home-hero.jpg" alt="Người tập thực hiện động tác lunge trong không gian đánh giá vận động MOVE+." fetchpriority="high"></div></div>
 </section>
-<section class="section band t-card_grid" id="dich-vu-noi-bat" data-fx-heading="wipe" data-fx-image="diagonal" data-fx-list="slide">
+<section class="section band t-card_grid" id="dich-vu-noi-bat" data-moment="horizontal">
   <div class="container collection">
     <div class="collection__intro reveal stack">
       <p class="eyebrow">Dịch vụ</p>
@@ -93,7 +93,7 @@
     </div>
   </div>
 </section>
-<section class="section section--flush t-split_steps" id="quy-trinh" data-fx-heading="words" data-fx-image="blinds" data-fx-list="flip" data-fx-scroll="text-fill">
+<section class="section section--flush t-split_steps" id="quy-trinh">
   <div class="split">
     <div class="split__media"><div class="media "><img src="assets/img/img-home-process.jpg" alt="Quy trình đánh giá và hướng dẫn vận động tại MOVE+." loading="lazy" decoding="async"></div></div>
     <div class="split__body">
@@ -107,7 +107,7 @@
     </div>
   </div>
 </section>
-<section class="section band t-quote_principles" id="nguyen-tac" data-fx-heading="blur">
+<section class="section band t-quote_principles" id="nguyen-tac" data-moment="highlight">
   <div class="container philosophy">
     <div class="philosophy__quote reveal stack">
       <h2>“Không chỉ hết đau — mục tiêu là giúp cơ thể vận động tự tin và bền vững hơn.”</h2>
@@ -145,7 +145,7 @@
     <div class="reveal"><div class="media ratio-3-4"><img src="assets/img/img-home-therapist.jpg" alt="Chuyên viên MOVE+ hướng dẫn người tập kiểm soát tư thế và chuyển động." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
-<section class="section t-cta_banner" id="home-cta" data-fx-heading="chars" data-fx-image="wipe-left" data-fx-list="scale">
+<section class="section t-cta_banner" id="home-cta">
   <div class="container">
     <div class="appointment reveal">
       <div class="media ratio-4-3"><img src="assets/img/img-home-cta.jpg" alt="Người tập chuẩn bị cho buổi đánh giá vận động tại MOVE+." loading="lazy" decoding="async"></div>
@@ -198,6 +198,10 @@
   </div>
 </footer>
 <div class="wordmark" aria-hidden="true" translate="no">MOVE+</div>
-<script src="assets/js/site.js" defer></script><script src="assets/js/motion.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/lenis.min.js" defer></script>
+<script src="assets/js/motion4.js" defer></script>
 </body>
 </html>

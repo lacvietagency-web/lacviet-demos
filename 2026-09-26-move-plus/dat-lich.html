@@ -2,7 +2,7 @@
 <html lang="vi" class="fx-load card-style-caption btn-fill link-underline">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"page": {"view_transition": "slide", "cursor": false, "grain": false, "progress": true}, "hover": {"cards": "zoom", "buttons": "fill", "links": "underline"}, "parallax_strength": 0.1}</script>
+<script type="application/json" id="fx-config">{"tempo": "energetic", "reveal": {"image": "left", "text": "rise"}, "hero": "rise", "smooth_scroll": true, "hover": {"cards": "lift", "buttons": "fill", "links": "underline"}, "page": {"view_transition": "wipe", "cursor": false, "grain": false, "progress": true}, "three_url": "assets/js/ring3d.js", "three_colors": {"metal": "#F4F6F7", "accent": "#E23B36"}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Đặt lịch đánh giá vận động | MOVE+</title>
@@ -14,7 +14,7 @@
 <meta property="og:description" content="Đặt lịch đánh giá vận động tại MOVE+, chọn khung giờ và mục tiêu cần hỗ trợ trước khi gặp chuyên viên phục hồi.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-move-plus/assets/img/og.jpg">
 <meta name="theme-color" content="#0C1116">
-<meta name="build-id" content="20260927022149">
+<meta name="build-id" content="20260927031803">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,7 @@
   </div>
 </header>
 <main id="main">
-<section class="section t-booking_intro" id="dat-lich-intro" data-fx-hero="" data-fx-heading="scramble" data-fx-image="focus" style="border-top:0">
+<section class="section t-booking_intro" id="dat-lich-intro" data-fx-hero="" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
       <h1>Dành một buổi để hiểu rõ cách cơ thể đang vận động</h1>
@@ -104,7 +104,7 @@
 </svg></span><div><strong>Mang theo thông tin liên quan</strong><p>Có thể chuẩn bị kết quả chẩn đoán hình ảnh hoặc hướng dẫn y khoa trước đó nếu có sẵn.</p></div></div></div>
   </div>
 </section>
-<section class="section band t-booking_selector" id="chon-lich" data-fx-heading="wipe" data-fx-image="blinds" data-fx-list="slide">
+<section class="section band t-booking_selector" id="chon-lich">
   <div class="container booking">
     <div class="reveal stack"><h2>Chọn thời gian và hình thức đánh giá phù hợp</h2>
 <p class="lead">Mỗi khung giờ được giới hạn để chuyên viên có đủ thời gian đánh giá và trao đổi kết quả ngay trong buổi hẹn.</p></div>
@@ -291,7 +291,7 @@
     </div>
   </div>
 </section>
-<section class="section t-contact_form" id="thong-tin-khach-hang" data-fx-heading="words" data-fx-list="rise">
+<section class="section t-contact_form" id="thong-tin-khach-hang">
   <div class="container form-layout">
     <div class="reveal stack"><p class="eyebrow">Mục tiêu vận động</p>
 <h2>Cho MOVE+ biết mục tiêu bạn muốn cải thiện</h2>
@@ -373,7 +373,7 @@
       </aside>
   </div>
 </section>
-<section class="section band t-confirm_review" id="xac-nhan" data-fx-heading="lines" data-fx-image="wipe-up" data-fx-list="flip" data-fx-scroll="text-fill">
+<section class="section band t-confirm_review" id="xac-nhan">
   <div class="container confirm">
     <div class="reveal stack"><h2>Kiểm tra lại thông tin trước khi gửi yêu cầu</h2>
 <p class="lead">MOVE+ sẽ hiển thị ngày, giờ, hình thức đánh giá, thông tin liên hệ và mục bạn quan tâm để bạn rà soát lần cuối.</p></div>
@@ -489,7 +489,7 @@
     </div>
   </div>
 </section>
-<section class="section section--flush t-info_split" id="booking-info" data-fx-heading="blur" data-fx-image="diagonal" data-fx-list="scale" data-fx-scroll="parallax">
+<section class="section section--flush t-info_split" id="booking-info" data-moment="expand">
   <div class="atelier">
     <div class="media "><img src="assets/img/img-booking-info.jpg" alt="Người tập chuẩn bị cơ thể trước buổi đánh giá vận động." loading="lazy" decoding="async"></div>
     <div class="atelier__body reveal stack">
@@ -572,6 +572,10 @@
   </div>
 </footer>
 <div class="wordmark" aria-hidden="true" translate="no">MOVE+</div>
-<script src="assets/js/site.js" defer></script><script src="assets/js/motion.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/gsap.min.js" defer></script>
+<script src="assets/js/ScrollTrigger.min.js" defer></script>
+<script src="assets/js/lenis.min.js" defer></script>
+<script src="assets/js/motion4.js" defer></script>
 </body>
 </html>
