@@ -19,11 +19,12 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Bỏ qua đến nội dung</a>
 
 <div class="demo-ribbon">Website demo — thương hiệu mẫu do <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a> thiết kế</div>
 <header class="site-header">
   <div class="container">
-    <a class="logo" href="index.html" aria-label="MOVE+ — Trang chủ">MOVE+</a>
+    <a class="logo" href="index.html" aria-label="MOVE+ — Trang chủ" translate="no">MOVE+</a>
     <nav class="nav" aria-label="Điều hướng chính"><a href="index.html">Trang chủ</a><a href="dich-vu.html">Dịch vụ phục hồi</a><a href="dat-lich.html" aria-current="page">Đặt lịch</a></nav>
     <a class="btn header-cta" href="dat-lich.html">Đặt lịch đánh giá vận động</a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-label="Mở menu"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -44,7 +45,7 @@
 </svg></span></button>
   </div>
 </header>
-<main>
+<main id="main">
 <section class="section t-booking_intro" id="dat-lich-intro" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
@@ -308,7 +309,7 @@
     <div class="reveal stack"><p class="eyebrow">THÔNG TIN NGƯỜI ĐẶT</p>
 <h2>Cho MOVE+ biết mục tiêu bạn muốn cải thiện</h2>
 <p class="lead">Thông tin này giúp chuyên viên chuẩn bị nội dung đánh giá phù hợp trước khi bạn đến.</p></div>
-    <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required placeholder="Nguyễn Minh Anh"><p class="hint">Nhập tên người trực tiếp tham gia buổi đánh giá.</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" placeholder="09xx xxx xxx"><p class="hint">MOVE+ dùng số này để xác nhận lịch hẹn.</p></div><div class="field"><label for="f-2">Email</label><input id="f-2" name="f-2" type="email" placeholder="ban@example.com"><p class="hint">Có thể dùng để nhận thông tin lịch hẹn và hướng dẫn chuẩn bị.</p></div><div class="field"><label for="f-3">Mục bạn quan tâm <span class="req">*</span></label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Trị liệu đau mỏi cổ vai gáy</option><option>Phục hồi chấn thương thể thao</option><option>Lộ trình phục hồi cá nhân hóa</option><option>Theo dõi tiến độ vận động</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
+    <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required autocomplete="name" placeholder="Nguyễn Minh Anh"><p class="hint">Nhập tên người trực tiếp tham gia buổi đánh giá.</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"><p class="hint">MOVE+ dùng số này để xác nhận lịch hẹn.</p></div><div class="field"><label for="f-2">Email</label><input id="f-2" name="f-2" type="email" inputmode="email" spellcheck="false" autocomplete="email" placeholder="ban@example.com"><p class="hint">Có thể dùng để nhận thông tin lịch hẹn và hướng dẫn chuẩn bị.</p></div><div class="field"><label for="f-3">Mục bạn quan tâm <span class="req">*</span></label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Trị liệu đau mỏi cổ vai gáy</option><option>Phục hồi chấn thương thể thao</option><option>Lộ trình phục hồi cá nhân hóa</option><option>Theo dõi tiến độ vận động</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-chevron-down"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -321,7 +322,7 @@
   stroke-linejoin="round"
 >
   <path d="m6 9 6 6 6-6" />
-</svg></span></div><p class="hint">Chọn mục gần nhất với vấn đề hiện tại; chuyên viên sẽ đánh giá lại trong buổi hẹn.</p></div><div class="field"><label for="f-4">Mục tiêu vận động</label><input id="f-4" name="f-4" type="text" placeholder="Ví dụ: quay lại chạy 5 km, tập gym không đau vai"><p class="hint">Mô tả một hoạt động cụ thể bạn muốn thực hiện tốt hơn.</p></div><div class="field"><label for="f-5">Ghi chú tình trạng hiện tại</label><textarea id="f-5" name="f-5" rows="2" placeholder="Vị trí khó chịu, thời điểm xuất hiện, hoạt động làm triệu chứng tăng hoặc giảm..."></textarea><p class="hint">Không cần tự chẩn đoán; chỉ cần mô tả những gì bạn đang cảm nhận và gặp khó khăn.</p></div>
+</svg></span></div><p class="hint">Chọn mục gần nhất với vấn đề hiện tại; chuyên viên sẽ đánh giá lại trong buổi hẹn.</p></div><div class="field"><label for="f-4">Mục tiêu vận động</label><input id="f-4" name="f-4" type="text" autocomplete="off" placeholder="Ví dụ: quay lại chạy 5 km, tập gym không đau vai"><p class="hint">Mô tả một hoạt động cụ thể bạn muốn thực hiện tốt hơn.</p></div><div class="field"><label for="f-5">Ghi chú tình trạng hiện tại</label><textarea id="f-5" name="f-5" rows="2" placeholder="Vị trí khó chịu, thời điểm xuất hiện, hoạt động làm triệu chứng tăng hoặc giảm..."></textarea><p class="hint">Không cần tự chẩn đoán; chỉ cần mô tả những gì bạn đang cảm nhận và gặp khó khăn.</p></div>
     </form>
       <aside class="summary" aria-live="polite">
         <h3>Thông tin đã chọn</h3>
