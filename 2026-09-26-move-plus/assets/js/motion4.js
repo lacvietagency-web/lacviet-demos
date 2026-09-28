@@ -49,11 +49,11 @@
     return $$(".w4", el);
   }
   function textBlocks(sec) {                     // copy groups: eyebrow, heading, lead, buttons, meta
-    return $$(".stack, .hero__content, .product__info, .intro__content, .appointment__body, .atelier__body, .philosophy__quote", sec)
-      .filter(function (b) { return !b.parentElement.closest(".stack, .hero__content, .product__info, .intro__content, .appointment__body, .atelier__body, .philosophy__quote"); });
+    var TB = ".stack, .hero__content, .product__info, .intro__content, .appointment__body, .atelier__body, .philosophy__quote, [data-text]";
+    return $$(TB, sec).filter(function (b) { return !b.parentElement.closest(TB); });
   }
-  function media(sec) { return $$(".media", sec).filter(function (m) { return !m.closest(".location, .summary, .card, .gallery__item"); }); }
-  var LISTS = ".collection__grid, .steps, .facts, .principles, .benefits, .specs, .related__grid, .gallery__grid, .info-grid, .story__notes";
+  function media(sec) { return $$(".media", sec).filter(function (m) { return !m.closest(".location, .summary, .card, .gallery__item, .lx-tile, .lx-row"); }); }
+  var LISTS = ".collection__grid, .steps, .facts, .principles, .benefits, .specs, .related__grid, .gallery__grid, .info-grid, .story__notes, [data-list]";
 
   // ---------------------------------------------------------------- baseline reveal (one language)
   function revealText(block, trigger) {
@@ -69,7 +69,7 @@
       gsap.fromTo(m, { clipPath: CLIP[reveal.image] || CLIP.up }, { clipPath: "inset(0% 0% 0% 0%)", duration: TEMPO.img, ease: TEMPO.imgEase,
         scrollTrigger: { trigger: m.parentElement, start: "top 85%", once: true } });
     }
-    if (img) gsap.from(img, { scale: 1.1, duration: TEMPO.img * 1.3, ease: "power2.out", scrollTrigger: { trigger: m.parentElement, start: "top 85%", once: true } });
+    if (img) gsap.from(img, { scale: 1.04, duration: TEMPO.img * 1.3, ease: "power2.out", scrollTrigger: { trigger: m.parentElement, start: "top 85%", once: true } });
   }
   function revealList(l) {
     var kids = Array.prototype.slice.call(l.children).slice(0, 8);
@@ -80,8 +80,8 @@
   // ---------------------------------------------------------------- hero signatures (expressive, once)
   function hero(sec) {
     var h1 = sec.querySelector("h1"), m = media(sec)[0], img = m && m.querySelector("img");
-    var rest = $$(":scope > * > :not(h1), .hero__content > :not(h1), .product__info > :not(h1), .intro__content > :not(h1)", sec)
-      .filter(function (x, i, a) { return a.indexOf(x) === i && !x.contains(h1); });
+    var rest = $$(":scope > * > :not(h1), .hero__content > :not(h1), .product__info > :not(h1), .intro__content > :not(h1), [data-text] > :not(h1)", sec)
+      .filter(function (x, i, a) { return a.indexOf(x) === i && !x.contains(h1) && !x.matches(".lx-giant, .lx-cut, .media, .lx-layers, .lx-hero__object, [data-text]"); });
     var words = h1 ? splitWords(h1) : [];
     var tl = gsap.timeline({ defaults: { ease: "power3.out" }, onStart: function () { root.classList.remove("fx-load"); } });
     var kind = cfg.hero || "rise";
@@ -89,7 +89,7 @@
       tl.fromTo(m, { clipPath: "inset(18% 22% 18% 22% round 18px)" }, { clipPath: "inset(0% 0% 0% 0% round 0px)", duration: 1.6, ease: "power4.inOut" }, 0);
       if (img) tl.fromTo(img, { scale: 1.25 }, { scale: 1, duration: 2, ease: "power3.out" }, 0);
     } else if (m && kind === "curtain") {
-      tl.fromTo(m, { clipPath: "inset(0% 50% 0% 50%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.4, ease: "power4.inOut" }, 0);
+      tl.fromTo(m, { clipPath: "inset(0% 34% 0% 34%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: "power3.inOut" }, 0);   // subject visible from the first frames
       if (img) tl.fromTo(img, { scale: 1.18 }, { scale: 1, duration: 2, ease: "power3.out" }, 0);
     } else if (m) {
       tl.fromTo(m, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
@@ -99,6 +99,23 @@
     if (words.length) tl.from(words, { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.035, ease: "power4.out" }, at);
     if (rest.length) tl.from(rest, { opacity: 0, y: 12, duration: 0.7, stagger: 0.08 }, at + 0.35);
     tl.from(".site-header", { opacity: 0, y: -10, duration: 0.7 }, 0.1);
+    // depth heroes (object / sandwich / wordmark): the giant word and the cut-out arrive as separate layers,
+    // then drift at different speeds while the hero scrolls away (parallax between layers, never on reading text)
+    var giant = sec.querySelector(".lx-giant"), cut = sec.querySelector(".lx-cut");
+    if (giant) tl.from(giant, { yPercent: 18, opacity: 0, duration: 0.9, ease: "power3.out" }, 0.2);
+    if (cut) tl.from(cut, { y: 60, opacity: 0, duration: 1.4, ease: "power3.out" }, 0.45);
+    if (giant || cut) {
+      var st = { trigger: sec, start: "top top", end: "bottom top", scrub: true };
+      if (giant) gsap.to(giant, { yPercent: -20, ease: "none", scrollTrigger: st });
+      if (cut) gsap.to(cut, { yPercent: sec.classList.contains("lx-hero--sandwich") ? 0 : -12, scale: sec.classList.contains("lx-hero--sandwich") ? 1.06 : 1, ease: "none", scrollTrigger: st });
+      var bg = sec.querySelector(".lx-bg img");
+      if (bg) gsap.to(bg, { scale: 1.06, ease: "none", scrollTrigger: st });
+      if (sec.classList.contains("lx-hero--wordmark") && img) {
+        // depth: the photograph sinks slower than the word rises (two speeds), plus a slow settle after the curtain
+        gsap.fromTo(img, { yPercent: 0 }, { yPercent: 12, ease: "none", scrollTrigger: st });
+        tl.fromTo(img, { scale: 1.16 }, { scale: 1, duration: 3.2, ease: "power2.out" }, 0);
+      }
+    }
   }
 
   // ---------------------------------------------------------------- scroll moments (≤2 per page)
@@ -121,7 +138,7 @@
       return true;
     },
     horizontal: function (sec) {                     // pinned horizontal track for a card row / gallery
-      var track = sec.querySelector(".collection__grid, .gallery__grid, .related__grid");
+      var track = sec.querySelector(".collection__grid, .gallery__grid, .related__grid, [data-track]");
       if (!desktop || !track) return false;
       sec.classList.add("m4-horizontal");
       var dist = function () { return Math.max(0, track.scrollWidth - track.clientWidth); };
