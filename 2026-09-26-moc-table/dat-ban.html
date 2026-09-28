@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="vi" class="fx-load card-style-caption btn-fill link-underline">
+<html lang="vi" class="fx-load btn-fill link-underline fx-grain nav-pill">
 <head>
 <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('fx')</script>
-<script type="application/json" id="fx-config">{"tempo": "calm", "reveal": {"image": "up", "text": "rise"}, "hero": "expand", "smooth_scroll": true, "hover": {"cards": "lift", "buttons": "fill", "links": "underline"}, "page": {"view_transition": "fade", "cursor": false, "grain": false, "progress": false}, "three_url": "assets/js/ring3d.js", "three_colors": {"metal": "#1B201A", "accent": "#3F5141"}}</script>
+<script type="application/json" id="fx-config">{"tempo": "calm", "reveal": {"image": "fade", "text": "rise"}, "hero": "curtain", "smooth_scroll": true, "hover": {"cards": "zoom", "buttons": "fill", "links": "underline"}, "page": {"view_transition": "fade", "cursor": false, "grain": true, "progress": false}, "three_url": "assets/js/ring3d.js", "three_colors": {"metal": "#181A17", "accent": "#516B56"}}</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Đặt bàn | MỘC TABLE</title>
@@ -13,8 +13,8 @@
 <meta property="og:title" content="Đặt bàn | MỘC TABLE">
 <meta property="og:description" content="Đặt bàn tại MỘC TABLE theo ngày, khung giờ và loại chỗ ngồi, đồng thời gửi trước các yêu cầu ăn uống cho đội ngũ nhà hàng.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-moc-table/assets/img/og.jpg">
-<meta name="theme-color" content="#E9E3D6">
-<meta name="build-id" content="20260927031746">
+<meta name="theme-color" content="#F4F0E7">
+<meta name="build-id" content="20260928162552">
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
 <body>
 <a class="skip-link" href="#main">Bỏ qua đến nội dung</a>
 
-<div class="demo-ribbon">Website demo — thương hiệu mẫu do <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a> thiết kế</div>
+<aside class="demo-ribbon" aria-label="Thông tin website demo">Website demo — thương hiệu mẫu do <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a> thiết kế</aside>
 <header class="site-header">
   <div class="container">
     <a class="logo" href="index.html" aria-label="MỘC TABLE — Trang chủ" translate="no">MỘC TABLE</a>
@@ -52,9 +52,10 @@
 <section class="section t-booking_intro" id="dat-ban-intro" data-fx-hero="" style="border-top:0">
   <div class="container intro">
     <div class="intro__content reveal stack">
-      <h1>Dành một buổi tối trọn vẹn cho hành trình vị giác</h1>
-<p class="lead">Mỗi khung giờ phục vụ được giới hạn số bàn để đội bếp và đội ngũ nhân viên duy trì nhịp trải nghiệm nhất quán. Hãy chọn thời gian phù hợp và cho chúng tôi biết những yêu cầu cần chuẩn bị trước.</p>
-      <div class="btn-row"><a class="btn" href="#chon-ban">Xem ngày còn bàn</a></div>
+      <p class="eyebrow">Đặt bàn MỘC TABLE</p>
+<h1>Một buổi tối trọn vẹn</h1>
+<p class="lead">Dành cho hành trình vị giác: mỗi khung giờ phục vụ được giới hạn số bàn để đội bếp và đội ngũ nhân viên duy trì nhịp trải nghiệm nhất quán. Hãy chọn thời gian phù hợp và cho chúng tôi biết những yêu cầu cần chuẩn bị trước.</p>
+      <div class="btn-row"><a class="btn" href="#chon-ban">Chọn ngày dùng bữa</a></div>
     </div>
     <div class="media "><img src="assets/img/img-booking-intro.jpg" alt="Bàn đôi sẵn sàng đón khách tại MỘC TABLE." fetchpriority="high"></div>
     <div class="benefits reveal"><div class="benefit"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -104,9 +105,9 @@
 </svg></span><div><strong>Xác nhận trước buổi dùng bữa</strong><p>Thông tin đặt bàn và yêu cầu đặc biệt sẽ được rà soát trước khi yêu cầu đặt bàn được xác nhận.</p></div></div></div>
   </div>
 </section>
-<section class="section t-booking_selector" id="chon-ban">
+<section class="section band lv-booking_selector-sheet t-booking_selector" id="chon-ban">
   <div class="container booking">
-    <div class="reveal stack"><p class="eyebrow">Chọn thời gian</p>
+    <div class="reveal stack"><p class="eyebrow">Bước 1 · Thời gian và chỗ ngồi</p>
 <h2>Chọn thời điểm bạn muốn dùng bữa</h2>
 <p class="lead">Các khung giờ được bố trí theo nhịp phục vụ của tasting menu. Một số loại bàn có số lượng rất có hạn.</p></div>
     <div class="booking__steps reveal">
@@ -276,29 +277,15 @@
   <path d="M19 18v2" />
 </svg></span> Loại chỗ ngồi</dt><dd data-sum="option"></dd></div>
         </dl>
-        
-        <a class="btn btn--accent" href="#thong-tin-khach">Điền thông tin bàn<span class="icon"><svg aria-hidden="true" focusable="false"
-  class="lucide lucide-arrow-right"
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></span></a>
+        <div class="media summary__thumb"><img src="assets/img/img-booking-counter.jpg" alt="Chỗ ngồi quầy chef counter tại MỘC TABLE." loading="lazy" decoding="async"></div>
+        <a class="btn btn--accent" href="#thong-tin-khach">Điền thông tin bàn</a>
       </aside>
     </div>
   </div>
 </section>
-<section class="section t-contact_form" id="thong-tin-khach">
+<section class="section lv-contact_form-centered t-contact_form" id="thong-tin-khach" data-moment="highlight">
   <div class="container form-layout">
-    <div class="reveal stack"><p class="eyebrow">Thông tin bàn</p>
+    <div class="reveal stack"><p class="eyebrow">Bước 2 · Thông tin liên hệ</p>
 <h2>Cho MỘC TABLE biết cách chuẩn bị cho bàn của bạn</h2>
 <p class="lead">Thông tin được dùng để liên hệ xác nhận, chuẩn bị loại bàn và ghi nhận nhu cầu ăn uống trước buổi dùng bữa.</p></div>
     <form class="form-grid reveal" novalidate data-booking-form><div class="field"><label for="f-0">Họ và tên <span class="req">*</span></label><input id="f-0" name="f-0" type="text" required autocomplete="name" placeholder="Nguyễn Minh Anh"><p class="hint">Tên người đại diện đặt bàn.</p></div><div class="field"><label for="f-1">Số điện thoại <span class="req">*</span></label><input id="f-1" name="f-1" type="tel" required pattern="[0-9 +]{9,15}" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx"><p class="hint">Dùng để xác nhận hoặc liên hệ khi có thay đổi về bàn.</p></div><div class="field"><label for="f-2">Email <span class="req">*</span></label><input id="f-2" name="f-2" type="email" required inputmode="email" spellcheck="false" autocomplete="email" placeholder="minhanh@example.com"><p class="hint">Thông tin xác nhận sẽ được gửi đến địa chỉ này.</p></div><div class="field"><label for="f-3">Trải nghiệm quan tâm <span class="req">*</span></label><div class="select-wrap"><select id="f-3" name="f-3" data-focus-field><option>Thực đơn 9 món theo mùa</option><option>Thực đơn 9 món + phối rượu sommelier</option><option>Quầy chef counter</option><option>Phòng tiệc riêng</option></select><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -380,9 +367,9 @@
       </aside>
   </div>
 </section>
-<section class="section t-confirm_review" id="xac-nhan">
+<section class="section band lv-confirm_review-line t-confirm_review" id="xac-nhan">
   <div class="container confirm">
-    <div class="reveal stack"><p class="eyebrow">Kiểm tra yêu cầu</p>
+    <div class="reveal stack"><p class="eyebrow">Bước 3 · Kiểm tra yêu cầu</p>
 <h2>Xác nhận thông tin trước khi gửi</h2>
 <p class="lead">Kiểm tra lại ngày, giờ, số khách, loại chỗ ngồi, trải nghiệm đã chọn và thông tin liên hệ trước khi gửi yêu cầu.</p></div>
     <div class="confirm__card reveal">
@@ -409,7 +396,7 @@
   <path d="M8 17h.01" />
   <path d="M12 17h.01" />
   <path d="M16 17h.01" />
-</svg></span><span class="label">Ngày</span><span class="value" data-sum="date">Chưa chọn</span><a href="#chon-ban">Thay đổi</a></div>
+</svg></span><span class="label">Ngày</span><span class="value" data-sum="date">Chưa chọn</span></div>
           <div class="confirm__row"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-clock"
   xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +411,7 @@
 >
   <circle cx="12" cy="12" r="10" />
   <path d="M12 6v6l4 2" />
-</svg></span><span class="label">Khung giờ</span><span class="value" data-sum="time">Chưa chọn</span><a href="#chon-ban">Thay đổi</a></div>
+</svg></span><span class="label">Khung giờ</span><span class="value" data-sum="time">Chưa chọn</span></div>
           <div class="confirm__row"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-armchair"
   xmlns="http://www.w3.org/2000/svg"
@@ -441,7 +428,7 @@
   <path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z" />
   <path d="M5 18v2" />
   <path d="M19 18v2" />
-</svg></span><span class="label">Loại chỗ ngồi</span><span class="value" data-sum="option">Chưa chọn</span><a href="#chon-ban">Thay đổi</a></div>
+</svg></span><span class="label">Loại chỗ ngồi</span><span class="value" data-sum="option">Chưa chọn</span></div>
           <div class="confirm__row"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-circle"
   xmlns="http://www.w3.org/2000/svg"
@@ -455,7 +442,8 @@
   stroke-linejoin="round"
 >
   <circle cx="12" cy="12" r="10" />
-</svg></span><span class="label">Trải nghiệm quan tâm</span><span class="value" data-sum="focus">Chưa chọn</span><a href="#thong-tin-khach">Thay đổi</a></div>
+</svg></span><span class="label">Trải nghiệm quan tâm</span><span class="value" data-sum="focus">Chưa chọn</span></div>
+          <p class="confirm__edit"><a href="#chon-ban">Chỉnh sửa thông tin</a></p>
       </div>
       <div class="confirm__side">
         <div class="principle"><span class="icon"><svg aria-hidden="true" focusable="false"
@@ -474,36 +462,17 @@
   <path d="m9 12 2 2 4-4" />
 </svg></span><div><h3>Chính sách xác nhận</h3><p>Yêu cầu trên website chưa phải là xác nhận đặt bàn chính thức. MỘC TABLE sẽ liên hệ để xác nhận tình trạng chỗ, yêu cầu ăn uống và các thông tin cần thiết trước buổi dùng bữa.</p></div></div>
         <div>
-          <button class="btn btn--accent" type="button" data-confirm>Gửi yêu cầu giữ bàn<span class="icon"><svg aria-hidden="true" focusable="false"
-  class="lucide lucide-arrow-right"
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" />
-</svg></span></button>
+          <button class="btn btn--accent" type="button" data-confirm>Gửi yêu cầu giữ bàn</button>
           <p class="confirm__done" data-confirm-done>Đây là website demo — thông tin không được gửi đi. Liên hệ Lạc Việt Media để có website đặt lịch thật cho thương hiệu của bạn.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="section band section--flush t-info_split" id="thong-tin-them" data-moment="expand">
-  <div class="atelier">
-    <div class="media "><img src="assets/img/img-booking-info.jpg" alt="Không gian đón khách của MỘC TABLE trước giờ dùng bữa." loading="lazy" decoding="async"></div>
-    <div class="atelier__body reveal stack">
-      <p class="eyebrow">Trước khi đến</p>
-<h2>Một vài lưu ý để buổi dùng bữa diễn ra trọn vẹn</h2>
-<p class="lead">Không gian và thực đơn được thiết kế cho trải nghiệm kéo dài. Đến đúng giờ và gửi trước các yêu cầu đặc biệt giúp đội ngũ chuẩn bị tốt hơn.</p>
-      <a class="btn" href="thuc-don.html">Xem thực đơn mùa này</a>
-      <div class="info-grid"><div class="fact"><span class="icon"><svg aria-hidden="true" focusable="false"
+<section class="section lx-infogrid t-info_split" id="thong-tin-them" data-moment="expand">
+  <div class="container lx-infogrid__wrap">
+    <div data-text><p class="eyebrow">Trước khi bạn đến</p><h2>Một vài lưu ý để buổi dùng bữa diễn ra trọn vẹn</h2><p class="lead">Không gian và thực đơn được thiết kế cho trải nghiệm kéo dài. Đến đúng giờ và gửi trước các yêu cầu đặc biệt giúp đội ngũ chuẩn bị tốt hơn.</p><a class="btn btn--ghost" href="thuc-don.html">Xem thực đơn mùa này</a></div>
+    <div class="lx-infogrid__facts" data-list><div class="fact"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-clock"
   xmlns="http://www.w3.org/2000/svg"
  
@@ -561,7 +530,7 @@
   <path d="M4.474 15h-.197a1 1 0 00-.969.753l-1.097 4.35a1.5 1.5 0 001.444 1.898L20.344 22a1.5 1.5 0 001.446-1.897l-1.098-4.35a1 1 0 00-.969-.753h-.197" />
   <circle cx="12" cy="8" r="2" />
 </svg></span><div><strong>Di chuyển</strong><span>Hướng dẫn di chuyển và thông tin đỗ xe sẽ được gửi kèm khi yêu cầu đặt bàn được xác nhận.</span></div></div></div>
-    </div>
+    <div class="lx-infogrid__media"><div class="media ratio-16-9"><img src="assets/img/img-booking-info.jpg" alt="Không gian đón khách của MỘC TABLE trước giờ dùng bữa." loading="lazy" decoding="async"></div></div>
   </div>
 </section>
 </main>
@@ -570,7 +539,7 @@
   <div class="container">
     <a class="logo" href="index.html">MỘC TABLE</a>
     <nav class="footer-links" aria-label="Liên kết cuối trang"><a href="index.html">Trang chủ</a><a href="thuc-don.html">Thực đơn</a><a href="dat-ban.html">Đặt bàn</a></nav>
-    <p class="footer-credit">Thiết kế bởi <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a><small>Website demo — thương hiệu mẫu · <a href="https://demo.lacviet.media/">Xem thêm website demo</a></small></p>
+    <p class="footer-credit">Thiết kế bởi <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a><small>Website demo — thương hiệu mẫu</small><small><a href="https://demo.lacviet.media/">Xem thêm website demo</a></small></p>
   </div>
 </footer>
 <script src="assets/js/site.js" defer></script>

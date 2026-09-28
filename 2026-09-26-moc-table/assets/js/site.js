@@ -65,7 +65,9 @@
   if (!grid) return;
   var state = { date: null, time: null, option: null, focus: null };
   var sums = function (key, value) {
-    document.querySelectorAll('[data-sum="' + key + '"]').forEach(function (el) { el.textContent = value; });
+    document.querySelectorAll('[data-sum="' + key + '"]').forEach(function (el) { el.textContent = value; el.setAttribute("data-filled", ""); });
+    var cb = document.querySelector("[data-confirm]");       // confirm reads as pending until date + time are chosen
+    if (cb) cb.classList.toggle("is-pending", !(state.date && state.time));
   };
   var activate = function (step) {
     document.querySelectorAll(".bk-col").forEach(function (c) { c.classList.toggle("is-active", c.dataset.step === step); });
@@ -136,6 +138,7 @@
 
   var form = document.querySelector("[data-booking-form]");
   var confirmBtn = document.querySelector("[data-confirm]");
+  if (confirmBtn) confirmBtn.classList.add("is-pending");
   var done = document.querySelector("[data-confirm-done]");
   if (form && confirmBtn) {
     confirmBtn.addEventListener("click", function () {
@@ -148,10 +151,52 @@
       });
       if (!state.date || !state.time) {
         ok = false;
-        document.getElementById("booking-selector").scrollIntoView({ behavior: "smooth" });
+        (document.querySelector(".t-booking_selector") || document.body).scrollIntoView({ behavior: "smooth" });
         activate(state.date ? "time" : "date");
       }
       if (ok) done.classList.add("is-shown");
     });
   }
+})();
+
+/* v5 layout helpers — own scope: the booking block above returns early on pages without a calendar */
+(function () {
+  "use strict";
+  // v5 index list: the row's image follows the pointer (desktop, fine pointer only; thumbnails show inline elsewhere)
+  var peek = document.querySelector(".lx-peek");
+  if (peek && window.matchMedia("(min-width: 901px) and (pointer: fine)").matches) {
+    var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var px = 0, py = 0, tx = 0, ty = 0, raf = null;
+    var move = function () { px += (tx - px) * (still ? 1 : 0.18); py += (ty - py) * (still ? 1 : 0.18);
+      peek.style.transform = "translate(" + (px + 28).toFixed(1) + "px," + (py - 160).toFixed(1) + "px)";
+      raf = (Math.abs(tx - px) + Math.abs(ty - py) > 0.5) ? requestAnimationFrame(move) : null; };
+    Array.prototype.forEach.call(document.querySelectorAll(".lx-index:not(.lx-index--compact) .lx-row"), function (row) {
+      var img = row.querySelector("img");
+      row.addEventListener("pointerenter", function (ev) {
+        if (!img) return;
+        tx = ev.clientX; ty = ev.clientY; if (!peek.classList.contains("is-on")) { px = tx; py = ty; move(); }   // start at the pointer, never at 0,0
+        peek.style.backgroundImage = "url('" + img.getAttribute("src") + "')"; peek.classList.add("is-on");
+      });
+      row.addEventListener("pointerleave", function () { peek.classList.remove("is-on"); });
+      row.addEventListener("pointermove", function (ev) { tx = ev.clientX; ty = ev.clientY; if (!raf) raf = requestAnimationFrame(move); });
+    });
+  }
+  // v5 giant display words: shrink to fit their row (never overflow the viewport), re-fit on resize/font load
+  var giants = Array.prototype.slice.call(document.querySelectorAll(".lx-giant"));
+  var fit = function () {
+    giants.forEach(function (g) {
+      g.style.fontSize = "";
+      var max = (g.parentElement.clientWidth || window.innerWidth) * (g.closest('.lx-hero--wordmark') ? 0.72 : 0.9), w = g.scrollWidth;
+      if (w > max) g.style.fontSize = (parseFloat(getComputedStyle(g).fontSize) * max / w).toFixed(1) + "px";
+    });
+  };
+  if (giants.length) { fit(); window.addEventListener("resize", fit); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit); }
+  // v5 booking sheet: the summary picture follows the chosen place
+  var sumThumb = document.querySelector(".lv-booking_selector-sheet .summary .summary__thumb img");
+  if (sumThumb) Array.prototype.forEach.call(document.querySelectorAll('.lv-booking_selector-sheet input[name="option"]'), function (r) {
+    r.addEventListener("change", function () {
+      var img = r.closest(".location").querySelector("img");
+      if (img) { sumThumb.src = img.getAttribute("src"); sumThumb.alt = img.alt; }
+    });
+  });
 })();
