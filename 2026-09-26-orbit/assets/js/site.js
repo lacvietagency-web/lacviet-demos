@@ -65,7 +65,7 @@
   if (!grid) return;
   var state = { date: null, time: null, option: null, focus: null };
   var sums = function (key, value) {
-    document.querySelectorAll('[data-sum="' + key + '"]').forEach(function (el) { el.textContent = value; });
+    document.querySelectorAll('[data-sum="' + key + '"]').forEach(function (el) { el.textContent = value; el.setAttribute("data-filled", ""); });
     var cb = document.querySelector("[data-confirm]");       // confirm reads as pending until date + time are chosen
     if (cb) cb.classList.toggle("is-pending", !(state.date && state.time));
   };
@@ -191,6 +191,20 @@
     });
   };
   if (giants.length) { fit(); window.addEventListener("resize", fit); if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit); }
+  // v5 spotlight nav: a glow pill slides under whichever link the pointer is nearest to (desktop, fine pointer only)
+  var glow = document.querySelector(".nav-glow");
+  if (glow && window.matchMedia("(min-width: 901px) and (pointer: fine)").matches) {
+    var navEl = glow.parentElement, links = Array.prototype.slice.call(navEl.querySelectorAll("a"));
+    var toGlow = function (a) {
+      var nb = navEl.getBoundingClientRect(), lb = a.getBoundingClientRect();
+      navEl.style.setProperty("--nav-glow-x", (lb.left - nb.left - 12).toFixed(1) + "px");
+      navEl.style.setProperty("--nav-glow-w", (lb.width + 24).toFixed(1) + "px");
+    };
+    var current = links.filter(function (a) { return a.getAttribute("aria-current") === "page"; })[0] || links[0];
+    if (current) toGlow(current);
+    links.forEach(function (a) { a.addEventListener("pointerenter", function () { toGlow(a); }); });
+    navEl.addEventListener("pointerleave", function () { if (current) toGlow(current); });
+  }
   // v5 booking sheet: the summary picture follows the chosen place
   var sumThumb = document.querySelector(".lv-booking_selector-sheet .summary .summary__thumb img");
   if (sumThumb) Array.prototype.forEach.call(document.querySelectorAll('.lv-booking_selector-sheet input[name="option"]'), function (r) {

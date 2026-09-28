@@ -91,9 +91,9 @@
     } else if (m && kind === "curtain") {
       tl.fromTo(m, { clipPath: "inset(0% 34% 0% 34%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: "power3.inOut" }, 0);   // subject visible from the first frames
       if (img) tl.fromTo(img, { scale: 1.18 }, { scale: 1, duration: 2, ease: "power3.out" }, 0);
-    } else if (m) {
-      tl.fromTo(m, { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "power2.out" }, 0);
-      if (img) tl.fromTo(img, { scale: 1.12 }, { scale: 1, duration: 2.2, ease: "power2.out" }, 0);
+    } else if (m && img) {
+      // v8 P0: no opacity fade on the image itself (it is the LCP candidate on most heroes) — scale-only settle
+      tl.fromTo(img, { scale: 1.12 }, { scale: 1, duration: 2.2, ease: "power2.out" }, 0);
     }
     var at = (kind === "expand" || kind === "curtain") ? 0.75 : 0.2;
     if (words.length) tl.from(words, { yPercent: 110, opacity: 0, duration: 0.9, stagger: 0.035, ease: "power4.out" }, at);
@@ -102,8 +102,9 @@
     // depth heroes (object / sandwich / wordmark): the giant word and the cut-out arrive as separate layers,
     // then drift at different speeds while the hero scrolls away (parallax between layers, never on reading text)
     var giant = sec.querySelector(".lx-giant"), cut = sec.querySelector(".lx-cut");
-    if (giant) tl.from(giant, { yPercent: 18, opacity: 0, duration: 0.9, ease: "power3.out" }, 0.2);
-    if (cut) tl.from(cut, { y: 60, opacity: 0, duration: 1.4, ease: "power3.out" }, 0.45);
+    // v8 P0: no opacity fade — both can be the LCP candidate (giant wordmark / cut-out subject), position-only reveal
+    if (giant) tl.from(giant, { yPercent: 18, duration: 0.9, ease: "power3.out" }, 0.2);
+    if (cut) tl.from(cut, { y: 60, duration: 1.4, ease: "power3.out" }, 0.45);
     if (giant || cut) {
       var st = { trigger: sec, start: "top top", end: "bottom top", scrub: true };
       if (giant) gsap.to(giant, { yPercent: -20, ease: "none", scrollTrigger: st });
@@ -162,6 +163,33 @@
       }, { rootMargin: "600px 0px" });
       io.observe(sec);
       return true;
+    },
+    trail: function (sec) {                          // this section's own photos ghost past the pointer while reading (desktop only,
+      if (!desktop) return false;                     // purely additive: always returns false so the section's real content reveals normally with or without it)
+      var imgs = $$(".media img", sec).map(function (im) { return im.currentSrc || im.src; }).filter(Boolean);
+      if (imgs.length < 3) return false;
+      var last = null, lastT = 0, idx = 0, live = [];
+      sec.addEventListener("pointermove", function (ev) {
+        var now = performance.now();
+        var d = last ? Math.hypot(ev.clientX - last.x, ev.clientY - last.y) : 999;
+        if (d < 90 || now - lastT < 90) return;
+        last = { x: ev.clientX, y: ev.clientY }; lastT = now;
+        var el = document.createElement("img");
+        el.src = imgs[idx % imgs.length]; idx++;
+        el.className = "fx-trail"; el.alt = ""; el.setAttribute("aria-hidden", "true");
+        el.style.left = ev.clientX + "px"; el.style.top = ev.clientY + "px";
+        document.body.appendChild(el); live.push(el);
+        var rot = Math.random() * 14 - 7;
+        gsap.fromTo(el, { opacity: 0, scale: 0.85, rotate: rot, xPercent: -50, yPercent: -50 },
+          { opacity: 1, scale: 1, duration: 0.35, ease: "power2.out" });
+        setTimeout(function () {
+          gsap.to(el, { opacity: 0, scale: 0.92, duration: 0.4, ease: "power2.in",
+            onComplete: function () { el.remove(); live = live.filter(function (x) { return x !== el; }); } });
+        }, 550);
+        if (live.length > 5) { var old = live.shift(); if (old) old.remove(); }
+      });
+      sec.addEventListener("pointerleave", function () { last = null; });
+      return false;
     }
   };
 
@@ -178,11 +206,31 @@
     });
     ScrollTrigger.refresh();
   }
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(init); else init();
-  setTimeout(function () { root.classList.remove("fx-load"); }, 2500);   // safety: never keep the hero hidden
+  // kinetic loader (opt-in, cfg.page.loader): brand name briefly on a plain field before the hero reveal starts.
+  // Built at runtime (like fx-cursor/fx-progress below) so build.py needs no new markup; text comes from the
+  // already-rendered .logo. Own timeline, independent of fonts.ready, so a slow web font can't delay it further.
+  var page = cfg.page || {};
+  function afterLoader(cb) {
+    var logo = page.loader && document.querySelector(".logo");
+    if (!logo) { cb(); return; }
+    var loader = document.createElement("div"); loader.className = "fx-loader"; loader.setAttribute("aria-hidden", "true");
+    var text = document.createElement("span"); text.className = "fx-loader__text"; text.textContent = logo.textContent;
+    loader.appendChild(text); document.body.appendChild(loader);
+    var done = false, finish = function () { if (done) return; done = true; if (loader.parentNode) loader.remove(); cb(); };
+    gsap.timeline({ onComplete: finish })
+      .fromTo(text, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" })
+      .to(text, { opacity: 1, duration: 0.25 })
+      .to(loader, { opacity: 0, duration: 0.4, ease: "power2.inOut" });
+    setTimeout(finish, 2200);   // safety: never stall the page if the timeline can't run
+  }
+  // v8 P0: no longer waits on document.fonts.ready — that held the whole hero (incl. the LCP image, before this
+  // fix) hostage for however long webfonts took. Word-split text may re-wrap a few px when the real font swaps
+  // in (display:swap already does this site-wide anyway); that's a strictly better trade than multi-second LCP.
+  afterLoader(init);
+  setTimeout(function () { root.classList.remove("fx-load"); }, page.loader ? 2400 : 600);   // safety net only, not the normal path
 
   // ---------------------------------------------------------------- hover + page chrome
-  var hover = cfg.hover || {}, page = cfg.page || {};
+  var hover = cfg.hover || {};
   if (window.matchMedia("(pointer: fine)").matches) {
     var cards = ".card, .gallery__item, .panel, .location";
     if (hover.cards === "tilt") $$(cards).forEach(function (c) {
