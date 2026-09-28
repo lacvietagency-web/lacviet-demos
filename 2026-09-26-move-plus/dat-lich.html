@@ -14,14 +14,15 @@
 <meta property="og:description" content="Đặt lịch đánh giá vận động tại MOVE+, chọn khung giờ và mục tiêu cần hỗ trợ trước khi gặp chuyên viên phục hồi.">
 <meta property="og:image" content="https://demo.lacviet.media/2026-09-26-move-plus/assets/img/og.jpg">
 <meta name="theme-color" content="#F4F6F7">
-<meta name="build-id" content="20260928235538">
+<meta name="build-id" content="20260929060423">
 <link rel="icon" href="data:,">
+<link rel="preload" as="image" href="assets/img/img-booking-intro.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;800&family=IBM+Plex+Sans:wght@400;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
-<body>
+<body class="has-sticky-cta">
 <a class="skip-link" href="#main">Bỏ qua đến nội dung</a>
 
 <aside class="demo-ribbon" aria-label="Thông tin website demo">Website demo — thương hiệu mẫu do <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a> thiết kế</aside>
@@ -53,11 +54,11 @@
   <div class="container intro">
     <div class="intro__content reveal stack">
       <p class="eyebrow">ĐẶT LỊCH MOVE+</p>
-<h1>Hiểu cách cơ thể đang vận động</h1>
+<h1 data-mobile-role="positioning">Hiểu cách cơ thể đang vận động</h1>
 <p class="lead">Buổi đánh giá ban đầu giúp ghi nhận triệu chứng, thói quen vận động, biên độ, sức mạnh và các động tác liên quan trước khi đề xuất lộ trình tiếp theo.</p>
-      <div class="btn-row"><a class="btn" href="#chon-lich">Xem lịch còn trống</a></div>
+      <div class="btn-row"><a class="btn" href="#chon-lich" data-mobile-role="primary-cta">Xem lịch còn trống</a></div>
     </div>
-    <div class="media "><img src="assets/img/img-booking-intro.jpg" alt="Người tập đến MOVE+ cho buổi đánh giá vận động đầu tiên." fetchpriority="high"></div>
+    <div class="media "><img src="assets/img/img-booking-intro.webp" alt="Người tập đến MOVE+ cho buổi đánh giá vận động đầu tiên." fetchpriority="high" data-mobile-role="representative-media"></div>
     <div class="benefits reveal"><div class="benefit"><span class="icon"><svg aria-hidden="true" focusable="false"
   class="lucide lucide-clock-3"
   xmlns="http://www.w3.org/2000/svg"
@@ -206,12 +207,12 @@
 </svg></span> Hình thức đánh giá</p>
           <label class="location">
             <input type="radio" name="option" value="Đánh giá tại trung tâm" checked>
-            <div class="media ratio-1-1"><img src="assets/img/img-booking-center.jpg" alt="Không gian đánh giá vận động tại trung tâm MOVE+." loading="lazy" decoding="async"></div>
+            <div class="media ratio-1-1"><img src="assets/img/img-booking-center.webp" alt="Không gian đánh giá vận động tại trung tâm MOVE+." loading="lazy" decoding="async"></div>
             <span><strong>Đánh giá tại trung tâm</strong><span>Thực hiện đầy đủ kiểm tra tư thế, biên độ, sức mạnh và động tác chức năng với thiết bị tại MOVE+.</span></span>
           </label>
           <label class="location">
             <input type="radio" name="option" value="Đánh giá vận động thể thao" >
-            <div class="media ratio-1-1"><img src="assets/img/img-booking-sport.jpg" alt="Khu đánh giá vận động thể thao tại MOVE+." loading="lazy" decoding="async"></div>
+            <div class="media ratio-1-1"><img src="assets/img/img-booking-sport.webp" alt="Khu đánh giá vận động thể thao tại MOVE+." loading="lazy" decoding="async"></div>
             <span><strong>Đánh giá vận động thể thao</strong><span>Tập trung vào chạy, bật nhảy, đổi hướng hoặc động tác đặc thù để xác định hạn chế khi quay lại tập luyện.</span></span>
           </label>
       </div>
@@ -272,7 +273,7 @@
   <circle cx="12" cy="10" r="3" />
 </svg></span> Hình thức đánh giá</dt><dd data-sum="option"></dd></div>
         </dl>
-        <div class="media summary__thumb"><img src="assets/img/img-booking-center.jpg" alt="Không gian đánh giá vận động tại trung tâm MOVE+." loading="lazy" decoding="async"></div>
+        <div class="media summary__thumb"><img src="assets/img/img-booking-center.webp" alt="Không gian đánh giá vận động tại trung tâm MOVE+." loading="lazy" decoding="async"></div>
         <a class="btn btn--accent" href="#thong-tin-khach-hang">Dùng khung giờ này</a>
       </aside>
     </div>
@@ -354,7 +355,7 @@
   <circle cx="12" cy="10" r="3" />
 </svg></span> Hình thức đánh giá</dt><dd data-sum="option"></dd></div>
         </dl><p class="small muted" style="margin-top:16px">Mục bạn quan tâm</p><p data-sum="focus" style="font-family:var(--font-heading);font-size:22px"></p>
-        <div class="media summary__thumb"><img src="assets/img/img-booking-summary.jpg" alt="Dụng cụ chuẩn bị cho buổi đánh giá vận động tại MOVE+." loading="lazy" decoding="async"></div>
+        <div class="media summary__thumb"><img src="assets/img/img-booking-summary.webp" alt="Dụng cụ chuẩn bị cho buổi đánh giá vận động tại MOVE+." loading="lazy" decoding="async"></div>
         
       </aside>
   </div>
@@ -465,7 +466,7 @@
 </section>
 <section class="section band section--flush t-info_split" id="booking-info" data-moment="expand">
   <div class="atelier">
-    <div class="media "><img src="assets/img/img-booking-info.jpg" alt="Người tập chuẩn bị cơ thể trước buổi đánh giá vận động." loading="lazy" decoding="async"></div>
+    <div class="media "><img src="assets/img/img-booking-info.webp" alt="Người tập chuẩn bị cơ thể trước buổi đánh giá vận động." loading="lazy" decoding="async"></div>
     <div class="atelier__body reveal stack">
       <h2>Chuẩn bị trước buổi đánh giá</h2>
 <p class="lead">Bạn không cần tập thử trước hay cố gắng thể hiện tốt hơn bình thường. Hãy đến với trạng thái vận động quen thuộc để chuyên viên quan sát được vấn đề thực tế.</p>
@@ -544,6 +545,7 @@
     <p class="footer-credit">Thiết kế bởi <a href="https://lacviet.media" target="_blank" rel="noopener">Lạc Việt Media Agency</a><small>Website demo — thương hiệu mẫu</small><small><a href="https://demo.lacviet.media/">Xem thêm website demo</a></small></p>
   </div>
 </footer>
+<div class="sticky-cta sticky-cta--global"><a class="btn" href="dat-lich.html">Đặt lịch đánh giá vận động</a></div>
 <script src="assets/js/site.js" defer></script>
 <script src="assets/js/gsap.min.js" defer></script>
 <script src="assets/js/ScrollTrigger.min.js" defer></script>
