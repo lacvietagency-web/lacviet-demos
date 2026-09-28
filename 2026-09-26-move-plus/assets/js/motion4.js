@@ -116,7 +116,24 @@
         gsap.fromTo(img, { yPercent: 0 }, { yPercent: 12, ease: "none", scrollTrigger: st });
         tl.fromTo(img, { scale: 1.16 }, { scale: 1, duration: 3.2, ease: "power2.out" }, 0);
       }
+    } else if (!desktop && cfg.mobile && cfg.mobile.hero_depth && img) {
+      // v8 P2 "mobile_hero_depth" — touch-native: direct scroll response, transform-only, CTA never moves.
+      // Only for heroes with no giant/cut layer (those already have their own depth above). Uses y only, never
+      // scale — the entrance tween above already owns `scale` on this same img; a second scale tween here would
+      // fight it for control (confirmed live: settled at the wrong value). Same reason the wordmark case above
+      // uses yPercent instead of scale for its own scroll-depth tween.
+      var copyBox = sec.querySelector(".hero__content, .product__info, .intro__content, [data-text]");
+      var mst = { trigger: sec, start: "top top", end: "+=" + Math.round(window.innerHeight * 0.4), scrub: true };
+      gsap.fromTo(img, { y: 0 }, { y: -12, ease: "none", scrollTrigger: mst });
+      if (copyBox) gsap.fromTo(copyBox, { y: 0 }, { y: -6, ease: "none", scrollTrigger: mst });
     }
+  }
+
+  function mobileCropReveal(m) {
+    // v8 P2 "mobile_crop_reveal" — below-fold media only (never the LCP hero); no opacity, clip-path + scale only
+    gsap.fromTo(m, { clipPath: "inset(8% 5% 8% 5% round 16px)", y: 16, scale: 1.055 },
+      { clipPath: "inset(0% 0% 0% 0% round 0px)", y: 0, scale: 1, ease: "none",
+        scrollTrigger: { trigger: m, start: "top 92%", end: "top 55%", scrub: true } });
   }
 
   // ---------------------------------------------------------------- scroll moments (≤2 per page)
@@ -196,12 +213,16 @@
   // ---------------------------------------------------------------- run
   function init() {
     var sections = $$("main > section");
+    // v8 P2: "mobile_crop_reveal" replaces the plain fade-up on at most 2 below-fold media per page (never the hero)
+    var cropBudget = (!desktop && cfg.mobile && cfg.mobile.crop_reveal) ? 2 : 0;
     sections.forEach(function (sec, i) {
       if (sec.hasAttribute("data-fx-hero")) { hero(sec); return; }
       var moment = sec.getAttribute("data-moment");
       var used = moment && MOMENTS[moment] ? MOMENTS[moment](sec) : false;
       textBlocks(sec).forEach(function (b) { revealText(b, sec); });
-      if (!used || moment === "highlight" || moment === "stack") media(sec).forEach(revealMedia);
+      if (!used || moment === "highlight" || moment === "stack") media(sec).forEach(function (m) {
+        if (cropBudget > 0 && !used) { cropBudget--; mobileCropReveal(m); } else { revealMedia(m); }
+      });
       if (moment !== "horizontal") $$(LISTS, sec).forEach(revealList);
     });
     ScrollTrigger.refresh();
