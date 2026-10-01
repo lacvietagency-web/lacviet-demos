@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://demo.lacviet.media/men-lam/sitemap.xml
