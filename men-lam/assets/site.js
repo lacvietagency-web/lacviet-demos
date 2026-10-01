@@ -221,7 +221,8 @@
   if (window.matchMedia("(min-width: 761px)").matches) {
     $$(".scene").forEach(function (s, i, all) {
       if (i === all.length - 1) return;
-      gsap.to(s, { scale: .94, opacity: .55, ease: "none", scrollTrigger: { trigger: all[i + 1], start: "top bottom", end: "top 72px", scrub: true } });
+      // fade the CONTENT, never the scene itself: a translucent scene let the earlier scenes show through
+      gsap.to(s.children, { scale: .94, opacity: .35, ease: "none", scrollTrigger: { trigger: all[i + 1], start: "top bottom", end: "top 72px", scrub: true } });
     });
   }
 })();
